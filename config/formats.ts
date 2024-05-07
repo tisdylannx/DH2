@@ -2857,7 +2857,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen2johtosanctuary',
-		ruleset: ['Standard', 'Data Mod', 'Freeze Clause Mod'],
+		ruleset: ['Standard'],
 		banlist: ['Uber', 'Baton Pass'],
 		unbanlist: [],
 	},
