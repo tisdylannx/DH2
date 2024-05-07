@@ -2850,6 +2850,42 @@ export const Formats: FormatList = [
 		unbanlist: [],
 	},
 	{
+		name: "[Gen 2] Johto Sanctuary OU",
+		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
+		],
+
+		mod: 'gen2johtosanctuary',
+		ruleset: ['Standard', 'Data Mod', 'Freeze Clause Mod'],
+		banlist: ['Uber', 'Baton Pass'],
+		unbanlist: [],
+	},
+	{
+		name: "[Gen 2] Johto Sanctuary UU",
+		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
+		],
+
+		mod: 'gen2johtosanctuary',
+		ruleset: ['[Gen 2] Johto Sanctuary OU]'],
+		banlist: ['OU', 'UUBL'],
+		unbanlist: [],
+	},
+	{
+		name: "[Gen 2] Johto Sanctuary RU",
+		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
+		],
+
+		mod: 'gen2johtosanctuary',
+		ruleset: ['[Gen 2] Johto Sanctuary UU]'],
+		banlist: ['UU', 'RUBL'],
+		unbanlist: [],
+	},
+	{
 		name: "[Gen 8] JolteMons Random Battle",
 		desc: `Pok&eacute;mon, items, abilities, and moves are redesigned for OU, and new items, abilities, and moves are added, all without changing base stats.`,
 		threads: [
