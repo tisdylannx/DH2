@@ -2882,7 +2882,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen6kip',
 		ruleset: ['[Gen 6] KIP RU'],
-		banlist: ['RU, NUBL'],
+		banlist: ['RU', 'NUBL'],
 		unbanlist: [],
 	},
 	{
