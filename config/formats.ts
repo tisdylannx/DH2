@@ -2845,9 +2845,9 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen6kip',
-		ruleset: ['Standard', 'Data Mod', 'Freeze Clause Mod'],
-		banlist: ['Uber', 'Arena Trap', 'Shadow Tag', 'Soul Dew', 'Baton Pass'],
-		unbanlist: [],
+		ruleset: ['Standard'],
+		banlist: ['Uber', 'Soul Dew', 'Baton Pass'],
+		unbanlist: ['Arena Trap', 'Shadow Tag',],
 	},
 	{
 		name: "[Gen 6] KIP UU",
@@ -2858,7 +2858,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen6kip',
 		ruleset: ['[Gen 6] KIP OU'],
-		banlist: ['OU', 'UUBL'],
+		banlist: ['OU', 'UUBL', '(OU)', 'AG'],
 		unbanlist: [],
 	},
 	{
@@ -2885,7 +2885,7 @@ export const Formats: FormatList = [
 		banlist: ['RU', 'NUBL'],
 		unbanlist: [],
 	},
-	{
+		{
 		name: "[Gen 2] Johto Sanctuary OU",
 		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
 		threads: [
