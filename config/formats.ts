@@ -3065,46 +3065,6 @@ export const Formats: FormatList = [
 		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Sand Veil', 'Shadow Tag', 'Snow Cloak', 'King\'s Rock', 'Baton Pass'],
 	},
 	{
-		name: "[Gen 9] Rebalanced National Dex OU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
-		],
-
-		mod: 'gen9rebalance',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
-	},
-	{
-		name: "[Gen 9] Rebalanced National Dex UU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
-		],
-
-		mod: 'gen9rebalance',
-		ruleset: ['[Gen 9] Rebalanced National Dex OU'],
-		banlist: ['ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay'],
-	},
-	{
-		name: "[Gen 9] Rebalanced National Dex RU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
-		],
-
-		mod: 'gen9rebalance',
-		ruleset: ['[Gen 9] Rebalanced National Dex UU'],
-		banlist: ['ND UU', 'ND RUBL'],
-	},
-	{
-		name: "[Gen 9] Rebalanced National Dex NU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
-		],
-
-		mod: 'gen9rebalance',
-		ruleset: ['[Gen 9] Rebalanced National Dex RU'],
-		banlist: ['ND RU', 'ND NUBL'],
-	},
-	{
 		name: "[Gen 9] Anything Goes",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3710911/">AG Metagame Discussion</a>`,
