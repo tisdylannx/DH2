@@ -2885,41 +2885,33 @@ export const Formats: FormatList = [
 		banlist: ['RU', 'NUBL'],
 		unbanlist: [],
 	},
-		{
-		name: "[Gen 2] Johto Sanctuary OU",
-		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
+	{
+		name: "[Gen 9] WheelMons OU",
 
-		mod: 'gen2johtosanctuary',
-		ruleset: ['Standard'],
-		banlist: ['Uber', 'Baton Pass'],
-		unbanlist: [],
+		mod: 'wheelmons',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
-		name: "[Gen 2] Johto Sanctuary UU",
-		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
+		name: "[Gen 9] WheelMons UU",
 
-		mod: 'gen2johtosanctuary',
-		ruleset: ['[Gen 2] Johto Sanctuary OU]'],
-		banlist: ['OU', 'UUBL'],
-		unbanlist: [],
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons OU'],
+		banlist: ['ND OU', 'ND UUBL'],
 	},
 	{
-		name: "[Gen 2] Johto Sanctuary RU",
-		desc: ["<b>KIP</b>: A Gen 2 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
+		name: "[Gen 9] WheelMons RU",
 
-		mod: 'gen2johtosanctuary',
-		ruleset: ['[Gen 2] Johto Sanctuary UU]'],
-		banlist: ['UU', 'RUBL'],
-		unbanlist: [],
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons UU'],
+		banlist: ['ND UU', 'ND RUBL'],
+	},
+	{
+		name: "[Gen 9] WheelMons NU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons RU'],
+		banlist: ['ND RU', 'ND NUBL'],
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
@@ -3054,14 +3046,7 @@ export const Formats: FormatList = [
 		name: "[Gen 9] OU",
 
 		mod: 'gen9',
-		ruleset: ['Standard'],
-		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Sand Veil', 'Shadow Tag', 'Snow Cloak', 'King\'s Rock', 'Baton Pass'],
-	},
-	{
-		name: "[Gen 9] WheelMons OU",
-
-		mod: 'wheelmons',
-		ruleset: ['Standard'],
+		ruleset: ['Standard Natdex'],
 		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Sand Veil', 'Shadow Tag', 'Snow Cloak', 'King\'s Rock', 'Baton Pass'],
 	},
 	{
