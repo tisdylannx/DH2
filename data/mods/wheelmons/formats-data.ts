@@ -345,7 +345,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	wigglytuff: {
-		tier: "ZU",
+		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -1145,7 +1145,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	snorlax: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -2776,17 +2776,17 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	rotom: {
 		tier: "PU",
 		doublesTier: "(DUU)",
-		natDexTier: "NU",
+		natDexTier: "RU",
 	},
 	rotomheat: {
 		tier: "RU",
 		doublesTier: "(DUU)",
-		natDexTier: "OU",
+		natDexTier: "RU",
 	},
 	rotomwash: {
 		tier: "UU",
 		doublesTier: "(DUU)",
-		natDexTier: "OU",
+		natDexTier: "UU",
 	},
 	rotomfrost: {
 		tier: "ZUBL",
@@ -2796,7 +2796,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	rotomfan: {
 		tier: "ZUBL",
 		doublesTier: "(DUU)",
-		natDexTier: "NU",
+		natDexTier: "RU",
 	},
 	rotommow: {
 		tier: "PU",
@@ -3574,12 +3574,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	vullaby: {
-		tier: "ZU",
+		tier: "NU",
 		doublesTier: "LC",
 		natDexTier: "LC",
 	},
 	mandibuzz: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5277,7 +5277,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	arboliva: {
-		tier: "PU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5501,12 +5501,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "UU",
 	},
 	ironjugulis: {
-		tier: "RUBL",
+		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
 	ironthorns: {
-		tier: "NUBL",
+		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5531,7 +5531,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "OU",
 	},
 	wochien: {
-		tier: "PU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5643,7 +5643,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "OU",
 	},
 	ogerponhearthflame: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "DOU",
 		natDexTier: "Uber",
 	},
