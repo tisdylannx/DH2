@@ -2889,29 +2889,43 @@ export const Formats: FormatList = [
 		name: "[Gen 9] WheelMons OU",
 
 		mod: 'wheelmons',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
+		ruleset: ['Standard', 'Data Mod', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
 		name: "[Gen 9] WheelMons UU",
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons OU'],
-		banlist: ['ND OU', 'ND UUBL'],
+		banlist: ['OU', 'UUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons RU",
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons UU'],
-		banlist: ['ND UU', 'ND RUBL'],
+		banlist: ['UU', 'RUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons NU",
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons RU'],
-		banlist: ['ND RU', 'ND NUBL'],
+		banlist: ['RU', 'NUBL'],
+	},
+	{
+		name: "[Gen 9] WheelMons PU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons NU'],
+		banlist: ['NU', 'PUBL'],
+	},
+	{
+		name: "[Gen 9] WheelMons ZU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons PU'],
+		banlist: ['PU', 'ZUBL'],
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
