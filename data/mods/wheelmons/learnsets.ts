@@ -5833,6 +5833,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	wigglytuff: {
 		learnset: {
 			alluringvoice: ["9M"],
+			boomburst: ["9L1"],
 			allyswitch: ["8M", "7T"],
 			amnesia: ["9M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
@@ -21827,6 +21828,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	snorlax: {
 		learnset: {
 			afteryou: ["7T", "7E", "6T", "6E", "5T", "5E"],
+			slackoff: ["9L1"],
 			amnesia: ["9M", "9L36", "8M", "8L36", "8V", "7L9", "7V", "6L9", "5L9", "5D", "4L9", "3L5"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			belch: ["9L52", "8L52", "7E", "6E"],
