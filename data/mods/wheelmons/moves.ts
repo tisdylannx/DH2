@@ -6844,7 +6844,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	glaiverush: {
 		num: 862,
-		accuracy: 100,
+		accuracy: 80,
 		basePower: 120,
 		category: "Physical",
 		name: "Glaive Rush",
@@ -6870,6 +6870,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.debug('removing Glaive Rush drawback before attack');
 				pokemon.removeVolatile('glaiverush');
 			},
+		},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Glaive Rush'));
 		},
 		secondary: null,
 		target: "normal",
