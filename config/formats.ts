@@ -2889,7 +2889,7 @@ export const Formats: FormatList = [
 		name: "[Gen 9] WheelMons OU",
 
 		mod: 'wheelmons',
-		ruleset: ['Standard', 'Data Mod', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
@@ -2926,6 +2926,20 @@ export const Formats: FormatList = [
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons PU'],
 		banlist: ['PU', 'ZUBL'],
+	},
+	{
+		name: "[Gen 2] Johto Sanctuary OU",
+
+		mod: 'gen2johtosanctuary',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber'],
+	},
+	{
+		name: "[Gen 9] WheelMons UU",
+
+		mod: 'gen2johtosanctuary',
+		ruleset: ['[Gen 2] Johto Sanctuary OU'],
+		banlist: ['OU', 'UUBL'],
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
