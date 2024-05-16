@@ -48,6 +48,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.boost({atk: boosts});
 		},
 	},
+	thunderclap: {
+		num: 909,
+		accuracy: 100,
+		basePower: 55,
+		category: "Special",
+		name: "Thunderclap",
+		pp: 5,
+		priority: 1,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Clever",
+	},
 	bide: {
 		inherit: true,
 		condition: {
