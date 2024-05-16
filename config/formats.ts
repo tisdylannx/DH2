@@ -2838,52 +2838,18 @@ export const Formats: FormatList = [
 		unbanlist: [],
 	},
 	{
-		name: "[Gen 6] KIP OU",
-		desc: ["<b>KIP</b>: A Gen 6 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
+		name: "[Gen 2] Johto Sanctuary OU",
 
-		mod: 'gen6kip',
-		ruleset: ['Standard'],
-		banlist: ['Uber', 'Soul Dew', 'Baton Pass'],
-		unbanlist: ['Arena Trap', 'Shadow Tag',],
+		mod: 'gen2johtosanctuary',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 6] KIP UU",
-		desc: ["<b>KIP</b>: A Gen 6 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
+		name: "[Gen 2] Johto Sanctuary UU",
 
-		mod: 'gen6kip',
-		ruleset: ['[Gen 6] KIP OU'],
-		banlist: ['OU', 'UUBL', 'AG'],
-		unbanlist: [],
-	},
-	{
-		name: "[Gen 6] KIP RU",
-		desc: ["<b>KIP</b>: A Gen 6 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
-
-		mod: 'gen6kip',
-		ruleset: ['[Gen 6] KIP UU'],
-		banlist: ['UU', 'RUBL'],
-		unbanlist: [],
-	},
-	{
-		name: "[Gen 6] KIP NU",
-		desc: ["<b>KIP</b>: A Gen 6 pet mod that aims to mix up the metagame."],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/hoenn-gaiden-pet-mod-of-the-season.3714737/">Hoenn Gaiden on Smogon Forums</a>`,
-		],
-
-		mod: 'gen6kip',
-		ruleset: ['[Gen 6] KIP RU'],
-		banlist: ['RU', 'NUBL'],
-		unbanlist: [],
+		mod: 'gen2johtosanctuary',
+		ruleset: ['[Gen 2] Johto Sanctuary OU'],
+		banlist: ['OU', 'UUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons OU",
