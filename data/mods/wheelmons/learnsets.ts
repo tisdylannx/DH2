@@ -63681,6 +63681,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	haxorus: {
 		learnset: {
 			aerialace: ["9M", "7M", "6M", "5M"],
+			glaiverush: ["9L1"],
 			aquatail: ["7T", "6T", "5T"],
 			assurance: ["9L9", "8M", "8L9", "7L1", "6L1", "5L1"],
 			attract: ["8M", "7M", "6M", "5M"],
