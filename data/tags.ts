@@ -262,6 +262,54 @@ export const Tags: {[id: string]: TagData} = {
 		name: "ND NU",
 		speciesFilter: species => species.natDexTier === 'NU',
 	},
+	ndpubl: {
+		name: "ND PUBL",
+		speciesFilter: species => species.natDexTier === 'PUBL',
+	},
+	ndpu: {
+		name: "ND PU",
+		speciesFilter: species => species.natDexTier === 'PU',
+	},
+	ndzubl: {
+		name: "ND ZUBL",
+		speciesFilter: species => species.natDexTier === 'ZUBL',
+	},
+	ndzu: {
+		name: "ND ZU",
+		speciesFilter: species => species.natDexTier === 'ZU',
+	},
+	ndsubl: {
+		name: "ND SUBL",
+		speciesFilter: species => species.natDexTier === 'SUBL',
+	},
+	ndsu: {
+		name: "ND SU",
+		speciesFilter: species => species.natDexTier === 'SU',
+	},
+	ndiubl: {
+		name: "ND IUBL",
+		speciesFilter: species => species.natDexTier === 'IUBL',
+	},
+	ndiu: {
+		name: "ND IU",
+		speciesFilter: species => species.natDexTier === 'IU',
+	},
+	ndaubl: {
+		name: "ND AUBL",
+		speciesFilter: species => species.natDexTier === 'AUBL',
+	},
+	ndau: {
+		name: "ND AU",
+		speciesFilter: species => species.natDexTier === 'AU',
+	},
+	ndlubl: {
+		name: "ND LUBL",
+		speciesFilter: species => species.natDexTier === 'LUBL',
+	},
+	ndlu: {
+		name: "ND LU",
+		speciesFilter: species => species.natDexTier === 'LU',
+	},
 
 	// Legality tags
 	past: {
