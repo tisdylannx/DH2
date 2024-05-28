@@ -2853,7 +2853,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex'],
-		teambuilderFormat: 'National Dex UU',
+		teambuilderFormat: 'UU',
 		banlist: ['ND OU', 'ND UUBL'],
 	},
 	{
@@ -2861,7 +2861,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex UU'],
-		teambuilderFormat: 'National Dex RU',
+		teambuilderFormat: 'RU',
 		banlist: ['ND UU', 'ND RUBL'],
 	},
 	{
@@ -2869,7 +2869,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex RU'],
-		teambuilderFormat: 'National Dex NU',
+		teambuilderFormat: 'NU',
 		banlist: ['ND RU', 'ND NUBL'],
 	},
 	{
@@ -2877,7 +2877,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex NU'],
-		teambuilderFormat: 'National Dex PU',
+		teambuilderFormat: 'PU',
 		banlist: ['ND NU', 'ND PUBL'],
 	},
 	{
@@ -2885,7 +2885,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex PU'],
-		teambuilderFormat: 'National Dex ZU',
+		teambuilderFormat: 'ZU',
 		banlist: ['ND PU', 'ND ZUBL'],
 	},
 	{
@@ -2893,7 +2893,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex ZU'],
-		teambuilderFormat: 'National Dex SU',
+		teambuilderFormat: 'SU',
 		banlist: ['ND ZU', 'ND SUBL'],
 	},
 	{
@@ -2901,7 +2901,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex SU'],
-		teambuilderFormat: 'National Dex IU',
+		teambuilderFormat: 'IU',
 		banlist: ['ND SU', 'ND IUBL'],
 	},
 	{
@@ -2909,7 +2909,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex IU'],
-		teambuilderFormat: 'National Dex AU',
+		teambuilderFormat: 'AU',
 		banlist: ['ND IU', 'ND AUBL'],
 	},
 	{
@@ -2917,7 +2917,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex AU'],
-		teambuilderFormat: 'National Dex LU',
+		teambuilderFormat: 'LU',
 		banlist: ['ND AU', 'ND LUBL'],
 	},
 	{
