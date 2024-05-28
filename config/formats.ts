@@ -2838,74 +2838,77 @@ export const Formats: FormatList = [
 		unbanlist: [],
 	},
 	{
-		name: "[Gen 2] Johto Sanctuary OU",
-
-		mod: 'gen2johtosanctuary',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 2] Johto Sanctuary UU",
-
-		mod: 'gen2johtosanctuary',
-		ruleset: ['[Gen 2] Johto Sanctuary OU'],
-		banlist: ['OU', 'UUBL'],
-	},
-	{
-		name: "[Gen 9] WheelMons OU",
+		name: "[Gen 9] WheelMons National Dex OU",
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
+		],
 
 		mod: 'wheelmons',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
-		name: "[Gen 9] WheelMons UU",
+		name: "[Gen 9] WheelMons National Dex UU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons OU'],
-		banlist: ['OU', 'UUBL'],
+		ruleset: ['[Gen 9] WheelMons National Dex OU'],
+		banlist: ['ND OU', 'ND UUBL'],
 	},
 	{
-		name: "[Gen 9] WheelMons RU",
+		name: "[Gen 9] WheelMons National Dex RU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons UU'],
-		banlist: ['UU', 'RUBL'],
+		ruleset: ['[Gen 9] WheelMons National Dex UU'],
+		banlist: ['ND UU', 'ND RUBL'],
 	},
 	{
-		name: "[Gen 9] WheelMons NU",
+		name: "[Gen 9] WheelMons National Dex NU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons RU'],
-		banlist: ['RU', 'NUBL'],
+		ruleset: ['[Gen 9] WheelMons National Dex RU'],
+		banlist: ['ND RU', 'ND NUBL'],
 	},
 	{
-		name: "[Gen 9] WheelMons PU",
+		name: "[Gen 9] WheelMons National Dex PU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons NU'],
-		banlist: ['NU', 'PUBL'],
+		ruleset: ['[Gen 9] WheelMons National Dex NU'],
+		banlist: ['ND NU', 'ND PUBL'],
 	},
 	{
-		name: "[Gen 9] WheelMons ZU",
+		name: "[Gen 9] WheelMons National Dex ZU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons PU'],
-		banlist: ['PU', 'ZUBL'],
+		ruleset: ['[Gen 9] WheelMons National Dex PU'],
+		banlist: ['ND PU', 'ND ZUBL'],
 	},
 	{
-		name: "[Gen 2] Johto Sanctuary OU",
+		name: "[Gen 9] WheelMons National Dex SU",
 
-		mod: 'gen2johtosanctuary',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber'],
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons National Dex ZU'],
+		banlist: ['ND ZU', 'ND SUBL'],
 	},
 	{
-		name: "[Gen 9] WheelMons UU",
+		name: "[Gen 9] WheelMons National Dex IU",
 
-		mod: 'gen2johtosanctuary',
-		ruleset: ['[Gen 2] Johto Sanctuary OU'],
-		banlist: ['OU', 'UUBL'],
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons National Dex SU'],
+		banlist: ['ND SU', 'ND IUBL'],
+	},
+	{
+		name: "[Gen 9] WheelMons National Dex AU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons National Dex IU'],
+		banlist: ['ND IU', 'ND AUBL'],
+	},
+	{
+		name: "[Gen 9] WheelMons National Dex LU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons National Dex AU'],
+		banlist: ['ND AU', 'ND LUBL'],
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
