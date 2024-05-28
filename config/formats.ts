@@ -2844,80 +2844,80 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'wheelmons',
+		teambuilderFormat: 'OU',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		teambuilderFormat: 'National Dex',
 		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex UU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex'],
 		teambuilderFormat: 'UU',
+		ruleset: ['[Gen 9] WheelMons National Dex'],
 		banlist: ['ND OU', 'ND UUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex RU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex UU'],
 		teambuilderFormat: 'RU',
+		ruleset: ['[Gen 9] WheelMons National Dex UU'],
 		banlist: ['ND UU', 'ND RUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex NU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex RU'],
 		teambuilderFormat: 'NU',
+		ruleset: ['[Gen 9] WheelMons National Dex RU'],
 		banlist: ['ND RU', 'ND NUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex PU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex NU'],
 		teambuilderFormat: 'PU',
+		ruleset: ['[Gen 9] WheelMons National Dex NU'],
 		banlist: ['ND NU', 'ND PUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex ZU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex PU'],
 		teambuilderFormat: 'ZU',
+		ruleset: ['[Gen 9] WheelMons National Dex PU'],
 		banlist: ['ND PU', 'ND ZUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex SU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex ZU'],
 		teambuilderFormat: 'SU',
+		ruleset: ['[Gen 9] WheelMons National Dex ZU'],
 		banlist: ['ND ZU', 'ND SUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex IU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex SU'],
 		teambuilderFormat: 'IU',
+		ruleset: ['[Gen 9] WheelMons National Dex SU'],
 		banlist: ['ND SU', 'ND IUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex AU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex IU'],
 		teambuilderFormat: 'AU',
+		ruleset: ['[Gen 9] WheelMons National Dex IU'],
 		banlist: ['ND IU', 'ND AUBL'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex LU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex AU'],
 		teambuilderFormat: 'LU',
+		ruleset: ['[Gen 9] WheelMons National Dex AU'],
 		banlist: ['ND AU', 'ND LUBL'],
 	},
 	{
