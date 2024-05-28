@@ -2838,20 +2838,22 @@ export const Formats: FormatList = [
 		unbanlist: [],
 	},
 	{
-		name: "[Gen 9] WheelMons National Dex OU",
+		name: "[Gen 9] WheelMons National Dex",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
 		],
 
 		mod: 'wheelmons',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		teambuilderFormat: 'National Dex',
 		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex UU",
 
 		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex OU'],
+		ruleset: ['[Gen 9] WheelMons National Dex'],
+		teambuilderFormat: 'National Dex UU',
 		banlist: ['ND OU', 'ND UUBL'],
 	},
 	{
@@ -2859,6 +2861,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex UU'],
+		teambuilderFormat: 'National Dex RU',
 		banlist: ['ND UU', 'ND RUBL'],
 	},
 	{
@@ -2866,6 +2869,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex RU'],
+		teambuilderFormat: 'National Dex NU',
 		banlist: ['ND RU', 'ND NUBL'],
 	},
 	{
@@ -2873,6 +2877,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex NU'],
+		teambuilderFormat: 'National Dex PU',
 		banlist: ['ND NU', 'ND PUBL'],
 	},
 	{
@@ -2880,6 +2885,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex PU'],
+		teambuilderFormat: 'National Dex ZU',
 		banlist: ['ND PU', 'ND ZUBL'],
 	},
 	{
@@ -2887,6 +2893,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex ZU'],
+		teambuilderFormat: 'National Dex SU',
 		banlist: ['ND ZU', 'ND SUBL'],
 	},
 	{
@@ -2894,6 +2901,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex SU'],
+		teambuilderFormat: 'National Dex IU',
 		banlist: ['ND SU', 'ND IUBL'],
 	},
 	{
@@ -2901,6 +2909,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex IU'],
+		teambuilderFormat: 'National Dex AU',
 		banlist: ['ND IU', 'ND AUBL'],
 	},
 	{
@@ -2908,6 +2917,7 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex AU'],
+		teambuilderFormat: 'National Dex LU',
 		banlist: ['ND AU', 'ND LUBL'],
 	},
 	{
@@ -2946,90 +2956,6 @@ export const Formats: FormatList = [
 			}
 		},
 	},
-	{
-		name: "[Gen 6] Mix and Megas Revisited",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3713949/">Megas Revisited on Smogon Forums</a>`,
-			`&bullet; <a href="https://docs.google.com/spreadsheets/d/1wK11cPHnPCmH7JFss6leKW6_-cumn3DuZA-YMzrzF-U/edit?usp=sharing">Spreadsheet</a>`,
-		],
-		mod: 'gen6mixandmegasrevisited',
-		ruleset: ['Standard', 'Swagger Clause', 'Mega Data Mod'],
-		banlist: [
-			'Medichamite', 'Glalitite', 'Altarianite',
-		],
-		restricted: [
-			'Arceus', 'Cresselia', 'Darkrai', 'Deoxys-Attack', 'Deoxys-Normal', 'Deoxys-Speed', 'Dialga', 'Dragonite', 'Genesect',
-			'Giratina', 'Groudon', 'Ho-Oh', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Lucario', 'Lugia', 'Manaphy', 'Mewtwo',
-			'Palkia', 'Rayquaza', 'Regigigas', 'Reshiram', 'Shaymin-Sky', 'Slaking', 'Xerneas', 'Yveltal', 'Zekrom',		
-		],
-		onValidateTeam(team) {
-			const itemTable = new Set<ID>();
-			for (const set of team) {
-				const item = this.dex.items.get(set.item);
-				if (!item.megaStone && !item.onPrimal &&
-					!item.forcedForme?.endsWith('Origin') && !item.name.startsWith('Rusted')) continue;
-				const natdex = this.ruleTable.has('standardnatdex');
-				if (natdex && item.id !== 'ultranecroziumz') continue;
-				const species = this.dex.species.get(set.species);
-				if (species.isNonstandard && !this.ruleTable.has(`+pokemontag:${this.toID(species.isNonstandard)}`)) {
-					return [`${species.baseSpecies} does not exist in gen 9.`];
-				}
-				if ((item.itemUser?.includes(species.name) && !item.megaStone && !item.onPrimal) ||
-					(natdex && species.name.startsWith('Necrozma-') && item.id === 'ultranecroziumz')) {
-					continue;
-				}
-				if (this.ruleTable.isRestrictedSpecies(species) || this.toID(set.ability) === 'powerconstruct') {
-					return [`${species.name} is not allowed to hold ${item.name}.`];
-				}
-				if (itemTable.has(item.id)) {
-					return [
-						`You are limited to one of each mega stone/orb/rusted item/sinnoh item.`,
-						`(You have more than one ${item.name})`,
-					];
-				}
-				itemTable.add(item.id);
-			}
-		},
-		onBegin() {
-			for (const pokemon of this.getAllPokemon()) {
-				pokemon.m.originalSpecies = pokemon.baseSpecies.name;
-			}
-		},
-		onSwitchIn(pokemon) {
-			// @ts-ignore
-			const originalFormeSpecies = this.dex.species.get(pokemon.species.originalSpecies);
-			if (originalFormeSpecies.exists && pokemon.m.originalSpecies !== originalFormeSpecies.baseSpecies) {
-				// Place volatiles on the Pokémon to show its mega-evolved condition and details
-				this.add('-start', pokemon, originalFormeSpecies.requiredItem || originalFormeSpecies.requiredMove, '[silent]');
-				const oSpecies = this.dex.species.get(pokemon.m.originalSpecies);
-				if (oSpecies.types.length !== pokemon.species.types.length || oSpecies.types[1] !== pokemon.species.types[1]) {
-					this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
-				}
-			}
-		},
-		// Starting innate abilities in scripts#actions
-		onSwitchOut(pokemon) {
-			// @ts-ignore
-			const oMegaSpecies = this.dex.species.get(pokemon.species.originalSpecies);
-			if (oMegaSpecies.exists && pokemon.m.originalSpecies !== oMegaSpecies.baseSpecies) {
-				this.add('-end', pokemon, oMegaSpecies.requiredItem || oMegaSpecies.requiredMove, '[silent]');
-			}
-		},
-	},
-	{
-		name: "[Gen 9] VaporeMons UU",
-		desc: [
-			"<b>VaporeMons</b>: The third mod in the SylveMons series where Pokemon, items, abilities and moves are redesigned for OU (and new items, abilities and moves are added) without changing base stats.",
-		],
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/vaporemons-slate-1-discussion-phase.3722917/">Thread on the Smogon Forums</a>`,
-			`&bullet; <a href="https://docs.google.com/spreadsheets/d/1_5AwZ24dPu3-5m5yOyIO4OTPmW9OwIWXXzZ5IJZkj4c/edit?usp=sharing">Spreadsheet</a>`,
-		],
-		mod: 'gen9vaporemons',
-		teambuilderFormat: 'UU',
-		ruleset: ['Standard', 'Terastal Clause', 'Data Mod', 'Sleep Moves Clause', '!Sleep Clause Mod'],
-		banlist: ['OU', 'UUBL', 'Uber', 'AG', 'Arena Trap', 'Moody', 'Shadow Tag', 'King\'s Rock', 'Baton Pass', 'Last Respects', 'Shed Tail', 'Light Clay', 'Dancing Shoes', 'Fling + Segin Star Shard'],
-	},
 	
 	///////////////////////////////////////////////////////////////
 	/////////////// Gen 9 Offical Smogon Formats //////////////////
@@ -3038,22 +2964,6 @@ export const Formats: FormatList = [
 		section: "Offical Smogon Formats",
 		column: 3,
 		// name: "officialsmogonformats",
-	},
-	{
-		name: "[Gen 9] OU",
-
-		mod: 'gen9',
-		ruleset: ['Standard Natdex'],
-		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Sand Veil', 'Shadow Tag', 'Snow Cloak', 'King\'s Rock', 'Baton Pass'],
-	},
-	{
-		name: "[Gen 9] Anything Goes",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3710911/">AG Metagame Discussion</a>`,
-		],
-
-		mod: 'gen9',
-		ruleset: ['Min Source Gen = 9', 'Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 	},
 	{
 		name: "[Gen 9] Custom Game",
