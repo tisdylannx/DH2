@@ -61493,6 +61493,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	swanna: {
 		learnset: {
 			acrobatics: ["9M"],
+			dragondance: ["9L1"],
 			aerialace: ["9M", "9L15", "7M", "7L15", "6M", "6L15", "5M", "5L15"],
 			aircutter: ["9M"],
 			airslash: ["9M", "9L27", "7L27", "6L27", "5L27"],
