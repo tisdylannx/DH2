@@ -2845,24 +2845,40 @@ export const Formats: FormatList = [
 
 		mod: 'wheelmons',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
-		teambuilderFormat: 'National Dex',
+		teambuilderFormat: 'OU',
+		banlist: ['Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex UU",
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex'],
-		banlist: ['ND OU', 'ND UUBL'],
-		teambuilderFormat: 'National Dex UU',
+		banlist: ['OU', 'UUBL'],
+		teambuilderFormat: 'UU',
 	},
 	{
 		name: "[Gen 9] WheelMons National Dex RU",
 
 		mod: 'wheelmons',
 		ruleset: ['[Gen 9] WheelMons National Dex UU'],
-		banlist: ['ND UU', 'ND RUBL'],
-		teambuilderFormat: 'National Dex RU',
+		banlist: ['UU', 'RUBL'],
+		teambuilderFormat: 'RU',
+	},
+	{
+		name: "[Gen 9] WheelMons National Dex NU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons National Dex RU'],
+		banlist: ['RU', 'NUBL'],
+		teambuilderFormat: 'NU',
+	},
+	{
+		name: "[Gen 9] WheelMons National Dex PU",
+
+		mod: 'wheelmons',
+		ruleset: ['[Gen 9] WheelMons National Dex NU'],
+		banlist: ['NU', 'PUBL'],
+		teambuilderFormat: 'PU',
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
