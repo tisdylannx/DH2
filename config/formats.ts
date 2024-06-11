@@ -2838,47 +2838,22 @@ export const Formats: FormatList = [
 		unbanlist: [],
 	},
 	{
-		name: "[Gen 9] WheelMons National Dex",
+		name: "[Gen 2] Johto Sanctuary",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
 		],
 
-		mod: 'wheelmons',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		teambuilderFormat: 'OU',
-		banlist: ['Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
+		mod: 'gen2johtosanctuary',
+		ruleset: ['Standard'],
+		banlist: ['Uber', 'Mean Look + Baton Pass', 'Spider Web + Baton Pass'],
 	},
 	{
-		name: "[Gen 9] WheelMons National Dex UU",
+		name: "[Gen 2] Johto Sanctuary UU",
 
-		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex'],
+		mod: 'gen2johtosanctuary',
+		ruleset: ['[Gen 2] Johto Sanctuary'],
 		banlist: ['OU', 'UUBL'],
 		teambuilderFormat: 'UU',
-	},
-	{
-		name: "[Gen 9] WheelMons National Dex RU",
-
-		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex UU'],
-		banlist: ['UU', 'RUBL'],
-		teambuilderFormat: 'RU',
-	},
-	{
-		name: "[Gen 9] WheelMons National Dex NU",
-
-		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex RU'],
-		banlist: ['RU', 'NUBL'],
-		teambuilderFormat: 'NU',
-	},
-	{
-		name: "[Gen 9] WheelMons National Dex PU",
-
-		mod: 'wheelmons',
-		ruleset: ['[Gen 9] WheelMons National Dex NU'],
-		banlist: ['NU', 'PUBL'],
-		teambuilderFormat: 'PU',
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
