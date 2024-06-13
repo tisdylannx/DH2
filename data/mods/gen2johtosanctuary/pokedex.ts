@@ -2351,7 +2351,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Kangaskhan",
 		types: ["Normal"],
 		gender: "F",
-		baseStats: {hp: 170, atk: 95, def: 90, spa: 15, spd: 90, spe: 95},
+		baseStats: {hp: 120, atk: 95, def: 90, spa: 65, spd: 90, spe: 95},
 		abilities: {0: "Early Bird", 1: "Scrappy", H: "Inner Focus"},
 		heightm: 2.2,
 		weightkg: 80,
@@ -4427,5 +4427,241 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Green",
 		tags: ["Mythical"],
 		eggGroups: ["Undiscovered"],
+	},
+	solosis: {
+		inherit: true,
+		gen: 2,
+	},
+	duosion: {
+		inherit: true,
+		gen: 2,
+	},
+	reuniclus: {
+		inherit: true,
+		gen: 2,
+	},
+	ferroseed: {
+		inherit: true,
+		gen: 2,
+	},
+	ferrothorn: {
+		inherit: true,
+		gen: 2,
+	},
+	greattusk: {
+		inherit: true,
+		gen: 2,
+	},
+	screamtail: {
+		inherit: true,
+		gen: 2,
+	},
+	brutebonnet: {
+		inherit: true,
+		gen: 2,
+	},
+	fluttermane: {
+		inherit: true,
+		gen: 2,
+	},
+	slitherwing: {
+		inherit: true,
+		gen: 2,
+	},
+	sandyshocks: {
+		inherit: true,
+		gen: 2,
+	},
+	roaringmoon: {
+		inherit: true,
+		gen: 2,
+	},
+	walkingwake: {
+		inherit: true,
+		gen: 2,
+	},
+	gougingfire: {
+		inherit: true,
+		gen: 2,
+	},
+	ragingbolt: {
+		inherit: true,
+		gen: 2,
+	},
+	irontreads: {
+		inherit: true,
+		gen: 2,
+	},
+	ironbundle: {
+		inherit: true,
+		gen: 2,
+	},
+	ironhands: {
+		inherit: true,
+		gen: 2,
+	},
+	ironjugulis: {
+		inherit: true,
+		gen: 2,
+	},
+	ironmoth: {
+		inherit: true,
+		gen: 2,
+	},
+	ironthorns: {
+		inherit: true,
+		gen: 2,
+	},
+	ironvaliant: {
+		inherit: true,
+		gen: 2,
+	},
+	ironleaves: {
+		inherit: true,
+		gen: 2,
+	},
+	ironboulder: {
+		inherit: true,
+		gen: 2,
+	},
+	ironcrown: {
+		inherit: true,
+		gen: 2,
+	},
+	sceptile: {
+		inherit: true,
+		gen: 2,
+	},
+	blaziken: {
+		inherit: true,
+		gen: 2,
+	},
+	swampert: {
+		inherit: true,
+		gen: 2,
+	},
+	torterra: {
+		inherit: true,
+		gen: 2,
+	},
+	infernape: {
+		inherit: true,
+		gen: 2,
+	},
+	empoleon: {
+		inherit: true,
+		gen: 2,
+	},
+	gliscor: {
+		inherit: true,
+		gen: 2,
+	},
+	deoxys: {
+		inherit: true,
+		gen: 2,
+	},
+	deoxysattack: {
+		inherit: true,
+		gen: 2,
+	},
+	deoxysdefense: {
+		inherit: true,
+		gen: 2,
+	},
+	deoxysspeed: {
+		inherit: true,
+		gen: 2,
+	},
+	metagross: {
+		inherit: true,
+		gen: 2,
+	},
+	gastrodon: {
+		inherit: true,
+		gen: 2,
+	},
+	urshifu: {
+		inherit: true,
+		gen: 2,
+	},
+	urshifurapidstrike: {
+		inherit: true,
+		gen: 2,
+	},
+	porygonz: {
+		inherit: true,
+		gen: 2,
+	},
+	heatran: {
+		inherit: true,
+		gen: 2,
+	},
+	rotom: {
+		inherit: true,
+		gen: 2,
+	},
+	rotomheat: {
+		inherit: true,
+		gen: 2,
+	},
+	rotommow: {
+		inherit: true,
+		gen: 2,
+	},
+	rotomwash: {
+		inherit: true,
+		gen: 2,
+	},
+	rotomfan: {
+		inherit: true,
+		gen: 2,
+	},
+	rotomfrost: {
+		inherit: true,
+		gen: 2,
+	},
+	claydol: {
+		inherit: true,
+		gen: 2,
+	},
+	zygarde: {
+		inherit: true,
+		gen: 2,
+	},
+	zygarde10: {
+		inherit: true,
+		gen: 2,
+	},
+	landorus: {
+		inherit: true,
+		gen: 2,
+	},
+	landorustherian: {
+		inherit: true,
+		gen: 2,
+	},
+	tornadus: {
+		inherit: true,
+		gen: 2,
+	},
+	tornadustherian: {
+		inherit: true,
+		gen: 2,
+	},
+	thundurustherian: {
+		inherit: true,
+		gen: 2,
+	},
+	thundurus: {
+		inherit: true,
+		gen: 2,
+	},
+	enamorus: {
+		inherit: true,
+		gen: 2,
+	},
+	enamorustherian: {
+		inherit: true,
+		gen: 2,
 	},
 };
