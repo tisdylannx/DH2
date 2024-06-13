@@ -758,4 +758,121 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	mamoswine: {
 		tier: "OU",
 	},
+	sceptile: {
+		tier: "OU",
+	},
+	blaziken: {
+		tier: "OU",
+	},
+	swampert: {
+		tier: "OU",
+	},
+	torterra: {
+		tier: "OU",
+	},
+	infernape: {
+		tier: "OU",
+	},
+	empoleon: {
+		tier: "OU",
+	},
+	gliscor: {
+		tier: "OU",
+	},
+	deoxys: {
+		tier: "Uber",
+	},
+	deoxysattack: {
+		tier: "Uber",
+	},
+	deoxysspeed: {
+		tier: "Uber",
+	},
+	deoxysdefense: {
+		tier: "OU",
+	},
+	metagross: {
+		tier: "OU",
+	},
+	gastrodon: {
+		tier: "OU",
+	},
+	urshifu: {
+		tier: "OU",
+	},
+	urshifurapidstrike: {
+		tier: "OU",
+	},
+	porygonz: {
+		tier: "OU",
+	},
+	heatran: {
+		tier: "OU",
+	},
+	rotom: {
+		tier: "OU",
+	},
+	rotomheat: {
+		tier: "OU",
+	},
+	rotommow: {
+		tier: "OU",
+	},
+	rotomfrost: {
+		tier: "OU",
+	},
+	rotomwash: {
+		tier: "OU",
+	},
+	rotomfan: {
+		tier: "OU",
+	},
+	claydol: {
+		tier: "OU",
+	},
+	zygarde: {
+		tier: "OU",
+	},
+	zygarde10: {
+		tier: "OU",
+	},
+	landorus: {
+		tier: "OU",
+	},
+	landorustherian: {
+		tier: "OU",
+	},
+	tornadus: {
+		tier: "OU",
+	},
+	tornadustherian: {
+		tier: "OU",
+	},
+	thundurus: {
+		tier: "OU",
+	},
+	thundurustherian: {
+		tier: "OU",
+	},
+	enamorus: {
+		tier: "OU",
+	},
+	enamorustherian: {
+		tier: "OU",
+	},
+	solosis: {
+		tier: "LC",
+	},
+	duosion: {
+		tier: "NFE",
+	},
+	reuniclus: {
+		tier: "OU",
+	},
+	ferroseed: {
+		tier: "LC",
+	},
+	ferrothorn: {
+		tier: "OU",
+	},
 };
