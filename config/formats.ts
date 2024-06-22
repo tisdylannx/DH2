@@ -2838,22 +2838,38 @@ export const Formats: FormatList = [
 		unbanlist: [],
 	},
 	{
-		name: "[Gen 2] Johto Sanctuary",
+		name: "[Gen 3] GPT OU",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
 		],
 
-		mod: 'gen2johtosanctuary',
+		mod: 'gen3gpt',
 		ruleset: ['Standard'],
 		banlist: ['Uber', 'Mean Look + Baton Pass', 'Spider Web + Baton Pass'],
 	},
 	{
-		name: "[Gen 2] Johto Sanctuary UU",
+		name: "[Gen 3] GPT UU",
 
-		mod: 'gen2johtosanctuary',
-		ruleset: ['[Gen 2] Johto Sanctuary'],
+		mod: 'gen3gpt',
+		ruleset: ['[Gen 3] GPT OU'],
 		banlist: ['OU', 'UUBL'],
 		teambuilderFormat: 'UU',
+	},
+	{
+		name: "[Gen 3] GPT NU",
+
+		mod: 'gen3gpt',
+		ruleset: ['[Gen 3] GPT OU'],
+		banlist: ['UU', 'NUBL'],
+		teambuilderFormat: 'NU',
+	},
+	{
+		name: "[Gen 3] GPT PU",
+
+		mod: 'gen3gpt',
+		ruleset: ['[Gen 3] GPT NU'],
+		banlist: ['NU', 'PUBL'],
+		teambuilderFormat: 'PU',
 	},
 	{
 		name: "[Gen 8] JolteMons Random Battle",
