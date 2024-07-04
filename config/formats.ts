@@ -67,8 +67,8 @@ export const Formats: FormatList = [
 		],
 		teambuilderFormat: "National Dex",
 		mod: 'gen9ndnfe',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: ['ND Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Baton Pass'],
+		ruleset: ['Standard'],
+		banlist: ['Uber'],
 	},
 	{
 		name: "[Gen 9] National Dex NFE UU",
@@ -78,6 +78,16 @@ export const Formats: FormatList = [
 		teambuilderFormat: "National Dex UU",
 		mod: 'gen9ndnfe',
 		ruleset: ['[Gen 9] National Dex NFE'],
-		banlist: ['ND OU', 'ND UUBL'],
+		banlist: ['OU', 'UUBL'],
+	},
+	{
+		name: "[Gen 9] National Dex NFE RU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "National Dex RU",
+		mod: 'gen9ndnfe',
+		ruleset: ['[Gen 9] National Dex NFE UU'],
+		banlist: ['UU', 'RUBL'],
 	},
 ];
