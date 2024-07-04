@@ -563,7 +563,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "OU",
 	},
 	magnemite: {
-		tier: "UU",
+		tier: "RU",
 	},
 	magneton: {
 		tier: "Uber",
@@ -1003,7 +1003,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	porygon: {
-		tier: "NFE",
+		tier: "UU",
 	},
 	porygon2: {
 		tier: "Uber",
@@ -1016,7 +1016,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RUBL",
 	},
 	omanyte: {
-		tier: "LC",
+		tier: "UU",
 		natDexTier: "LC",
 	},
 	omastar: {
@@ -1024,7 +1024,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	kabuto: {
-		tier: "LC",
+		tier: "UU",
 		natDexTier: "LC",
 	},
 	kabutops: {
@@ -1307,7 +1307,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	unown: {
-		tier: "UU",
+		tier: "RU",
 		natDexTier: "RU",
 	},
 	wynaut: {
@@ -1315,7 +1315,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "LC",
 	},
 	wobbuffet: {
-		tier: "UU",
+		tier: "RU",
 		natDexTier: "RU",
 	},
 	girafarig: {
@@ -1506,7 +1506,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	stantler: {
-		tier: "NFE",
+		tier: "UUBL",
 	},
 	wyrdeer: {
 		tier: "Uber",
@@ -1585,7 +1585,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	combusken: {
-		tier: "UU",
+		tier: "UUBL",
 		doublesTier: "NFE",
 		natDexTier: "NFE",
 	},
@@ -1767,7 +1767,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "LC",
 	},
 	loudred: {
-		tier: "UU",
+		tier: "RU",
 		natDexTier: "NFE",
 	},
 	exploud: {
@@ -1948,7 +1948,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	vibrava: {
-		tier: "UU",
+		tier: "RU",
 	},
 	flygon: {
 		tier: "Uber",
@@ -2294,7 +2294,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	prinplup: {
-		tier: "NFE",
+		tier: "UU",
 	},
 	empoleon: {
 		tier: "Uber",
@@ -2340,7 +2340,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	cranidos: {
-		tier: "LC",
+		tier: "UU",
 	},
 	rampardos: {
 		tier: "Uber",
@@ -2842,7 +2842,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "LC",
 	},
 	palpitoad: {
-		tier: "NFE",
+		tier: "UU",
 		natDexTier: "NFE",
 	},
 	seismitoad: {
@@ -3546,7 +3546,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	swirlix: {
-		tier: "UU",
+		tier: "RU",
 		natDexTier: "LC",
 	},
 	slurpuff: {
@@ -3765,7 +3765,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	torracat: {
-		tier: "NFE",
+		tier: "UU",
 	},
 	incineroar: {
 		tier: "Uber",
@@ -4948,7 +4948,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "OU",
 	},
 	glimmet: {
-		tier: "UU",
+		tier: "RU",
 	},
 	glimmora: {
 		tier: "Uber",
