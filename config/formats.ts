@@ -67,7 +67,7 @@ export const Formats: FormatList = [
 		],
 		teambuilderFormat: "National Dex",
 		mod: 'gen9ndnfe',
-		ruleset: ['Standard'],
+		ruleset: ['Standard Natdex'],
 		banlist: ['Uber'],
 	},
 	{
@@ -78,7 +78,7 @@ export const Formats: FormatList = [
 		teambuilderFormat: "National Dex UU",
 		mod: 'gen9ndnfe',
 		ruleset: ['[Gen 9] National Dex NFE'],
-		banlist: ['OU', 'UUBL'],
+		banlist: ['ND OU', 'ND UUBL'],
 	},
 	{
 		name: "[Gen 9] National Dex NFE RU",
@@ -88,6 +88,16 @@ export const Formats: FormatList = [
 		teambuilderFormat: "National Dex RU",
 		mod: 'gen9ndnfe',
 		ruleset: ['[Gen 9] National Dex NFE UU'],
-		banlist: ['UU', 'RUBL'],
+		banlist: ['ND UU', 'ND RUBL'],
+	},
+	{
+		name: "[Gen 9] National Dex Rebalanced OU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "National Dex OU",
+		mod: 'gen9ndrebalanced',
+		ruleset: ['Standard Natdex'],
+		banlist: ['ND Uber'],
 	},
 ];
