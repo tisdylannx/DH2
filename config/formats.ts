@@ -97,7 +97,7 @@ export const Formats: FormatList = [
 		],
 		teambuilderFormat: "National Dex OU",
 		mod: 'gen9ndrebalanced',
-		ruleset: ['Standard Natdex'],
+		ruleset: ['Standard Natdex', 'Terastal Clause'],
 		banlist: ['ND Uber'],
 	},
 ];
