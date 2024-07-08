@@ -18309,7 +18309,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Steel", "Psychic"],
 		gender: "N",
 		baseStats: {hp: 90, atk: 72, def: 100, spa: 122, spd: 108, spe: 98},
-		abilities: {0: "Quark Drive"1: "Magic Guard"},
+		abilities: {0: "Quark Drive", 1: "Magic Guard"},
 		heightm: 1.6,
 		weightkg: 156,
 		color: "Blue",
