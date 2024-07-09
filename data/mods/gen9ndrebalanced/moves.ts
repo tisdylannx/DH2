@@ -22030,10 +22030,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 70,
 		category: "Special",
+		shortDesc: "Free user from hazards; -1 Spe to target.",
 		name: "Clean Sweep",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		onAfterHit(target, pokemon, move) {
 			if (!move.hasSheerForce) {
 				if (pokemon.hp && pokemon.removeVolatile('leechseed')) {
@@ -22078,15 +22079,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 	frostbite: {
 		num: 901,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 80,
 		category: "Physical",
+		shortDesc: "20% chance to freeze the target.",
 		name: "Frostbite",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
 		secondaries: [
 			{
-				chance: 30,
+				chance: 20,
 				status: 'frz',
 			},
 		],
@@ -22099,10 +22101,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 60,
 		category: "Special",
+		shortDesc: "Sets a layer of Toxic Spikes.",
 		name: "Toxic Flood",
 		pp: 15,
 		priority: 0,
-		flags: {reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1},
+		flags: {protect: 1, mirror: 1, metronome: 1},
 		sideCondition: 'toxicspikes',
 		condition: {
 			// this is a side condition
@@ -22137,25 +22140,163 @@ export const Moves: {[moveid: string]: MoveData} = {
 	torpedocrash: {
 		num: 903,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 100,
 		category: "Physical",
+		shortDesc: "Has 33% recoil. Usually goes first.",
 		name: "Torpedo Crash",
 		pp: 15,
 		priority: 1,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
-		mindBlownRecoil: true,
-		onAfterMove(pokemon, target, move) {
-			if (move.mindBlownRecoil && !move.multihit) {
-				const hpBeforeRecoil = pokemon.hp;
-				this.damage(Math.round(pokemon.maxhp / 10), pokemon, pokemon, this.dex.conditions.get('Torpedo Crash'), true);
-				if (pokemon.hp <= pokemon.maxhp / 10 && hpBeforeRecoil > pokemon.maxhp / 10) {
-					this.runEvent('EmergencyExit', pokemon, pokemon);
-				}
-			}
-		},
+		recoil: [1, 3],
 		secondary: null,
 		target: "normal",
 		type: "Water",
 		contestType: "Cool",
+	},
+	mistyglide: {
+		num: 904,
+		accuracy: 100,
+		basePower: 55,
+		category: "Special",
+		shortDesc: "User on Misty Terrain: +1 priority.",
+		name: "Misty Glide",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		onModifyPriority(priority, source, target, move) {
+			if (this.field.isTerrain('mistyterrain') && source.isGrounded()) {
+				return priority + 1;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cool",
+	},
+	thunderglide: {
+		num: 905,
+		accuracy: 100,
+		basePower: 55,
+		category: "Special",
+		shortDesc: "User on Electric Terrain: +1 priority.",
+		name: "Thunder Glide",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		onModifyPriority(priority, source, target, move) {
+			if (this.field.isTerrain('electricterrain') && source.isGrounded()) {
+				return priority + 1;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Cool",
+	},
+	mindglide: {
+		num: 906,
+		accuracy: 100,
+		basePower: 55,
+		category: "Special",
+		shortDesc: "User on Psychic Terrain: +1 priority.",
+		name: "Mind Glide",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		onModifyPriority(priority, source, target, move) {
+			if (this.field.isTerrain('psychicterrain') && source.isGrounded()) {
+				return priority + 1;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	tornadokick: {
+		num: 907,
+		accuracy: 90,
+		basePower: 115,
+		category: "Physical",
+		shortDesc: "40% chance to confuse the target.",
+		name: "Tornado Kick",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 40,
+			volatileStatus: 'confusion',
+		},
+		target: "normal",
+		type: "Flying",
+		contestType: "Cool",
+	},
+	bubblebarrage: {
+		num: 908,
+		accuracy: 100,
+		basePower: 40,
+		category: "Special",
+		shortDesc: "Hits twice. -1 Spe each hit.",
+		name: "Bubble Barrage",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		multihit: 2,
+		secondary: {
+			chance: 100,
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
+	},
+	blazestorm: {
+		num: 909,
+		accuracy: 85,
+		basePower: 100,
+		category: "Special",
+		shortDesc: "100% chance to burn the target.",
+		name: "Blaze Storm",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 100,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Cool",
+	},
+	spikeshot: {
+		num: 910,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		shortDesc: "Sets a layer of Spikes.",
+		name: "Spike Shot",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		onAfterHit(target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('spikes');
+				}
+			}
+		},
+		onAfterSubDamage(damage, target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('spikes');
+				}
+			}
+		},
+		secondary: {}, // Sheer Force-boosted
+		target: "normal",
+		type: "Ground",
 	},
 };
