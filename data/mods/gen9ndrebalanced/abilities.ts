@@ -5575,11 +5575,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 278,
 	},
 	cloudguard: {
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				return this.chainModify([1024, 4096]);
-			}
+		onSourceModifyDamage(damage, source, target, move) {
+			let mod = 1;
+			if (move.flags['contact']) mod /= 4;
+			return this.chainModify(mod);
 		},
+		flags: {breakable: 1},
         name: "Cloud Guard",
 		rating: 5,
 		num: 279,
@@ -5605,33 +5606,46 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
         shortDesc: "Water and Fighting moves change typing depending on the damage of each.",
     },
     imagination: {
-        onModifyMove(move, source, target) {
-            const allTypes = Object.keys(this.dex.data.TypeChart);
+        onModifyMove(move, attacker, defender) {
+            // List of all types
+            const allTypes = [
+                'Normal', 'Fire', 'Water', 'Electric', 'Grass',
+                'Ice', 'Fighting', 'Poison', 'Ground', 'Flying',
+                'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon',
+                'Dark', 'Steel', 'Fairy'
+            ];
+
+            let bestType = move.type;
+            let bestEffectiveness = -1;
 
             for (const type of allTypes) {
-                if (this.dex.getEffectiveness(type, target) > 0) {
-                    move.type = type;
-                    this.add('-message', `Imagination changed ${move.name} to ${move.type}-type!`);
-                    break;
+                const typeEffectiveness = this.dex.getEffectiveness(type, defender);
+
+                if (typeEffectiveness > bestEffectiveness) {
+                    bestType = type;
+                    bestEffectiveness = typeEffectiveness;
                 }
             }
+
+            move.type = bestType;
+            this.add('-message', `${move.name} changed to ${move.type}-type to be super effective!`);
         },
         name: "Imagination",
 		rating: 5,
 		num: 281,
-        shortDesc: "Changes move type to be super effective against the target.",
+        shortDesc: "Changes moves to be a super effective type against the target.",
     },
 	excitement: {
 		onStart(pokemon) {
 			if (pokemon.baseSpecies.name === 'Ribombee' && !this.effectState.embodied) {
 				this.effectState.embodied = true;
-				this.boost({spe: 1}, pokemon);
+				this.boost({spe: 2}, pokemon);
 			}
 		},
         name: "Excitement",
 		rating: 5,
 		num: 282,
-        shortDesc: "Increases Spe by 2x on switch-in.",
+        shortDesc: "Speed is raised 2 stages on switch-in.",
     },
 	scarfdown: {
         onSwitchIn(pokemon) {
@@ -5673,6 +5687,34 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 283,
         shortDesc: "If holding a damage-halving Berry, changes type to the type the Berry protects against and consumes the Berry.",
     },
+	absorbent: {
+        onSwitchIn(pokemon) {
+            let healed = false;  
+            let healAmount = 0;
+            const hazards = [
+                {hazard: 'spikes', layers: pokemon.side.getSideCondition('spikes')?.layers || 0},
+                {hazard: 'stealthrock', layers: pokemon.side.getSideCondition('stealthrock') ? 1 : 0},
+                {hazard: 'toxicspikes', layers: pokemon.side.getSideCondition('toxicspikes')?.layers || 0},
+            ];
+
+            for (const {hazard, layers} of hazards) {
+                if (layers > 0) {
+                    pokemon.side.removeSideCondition(hazard);
+                    healAmount += layers * pokemon.baseMaxhp / 8;
+                    healed = true;
+                }
+            }
+
+            if (healed) {
+                this.add('-activate', pokemon, 'ability: Absorbent');
+                pokemon.heal(healAmount);
+            }
+		},
+        name: "Absorbent",
+		rating: 5,
+		num: 284,
+        shortDesc: "Removes hazards on switch-in and heals based on hazards removed.",
+	},
 	// CAP
 	mountaineer: {
 		onDamage(damage, target, source, effect) {
