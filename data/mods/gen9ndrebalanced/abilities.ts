@@ -5622,20 +5622,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
         shortDesc: "Changes move type to be super effective against the target.",
     },
 	excitement: {
-        onSwitchIn(pokemon) {
-            const firstMove = pokemon.moves[0];
-            if (firstMove) {
-                const move = this.dex.moves.get(firstMove);
-                if (pokemon.canUseMove(move.id)) {
-                    this.add('-activate', pokemon, 'ability: Excitement');
-                    this.actions.useMove(firstMove, pokemon);
-                }
-            }
-        },
+		onStart(pokemon) {
+			if (pokemon.baseSpecies.name === 'Ribombee' && !this.effectState.embodied) {
+				this.effectState.embodied = true;
+				this.boost({spe: 1}, pokemon);
+			}
+		},
         name: "Excitement",
 		rating: 5,
 		num: 282,
-        shortDesc: "Uses the first move in the move slot upon switch-in.",
+        shortDesc: "Increases Spe by 2x on switch-in.",
     },
 	scarfdown: {
         onSwitchIn(pokemon) {
