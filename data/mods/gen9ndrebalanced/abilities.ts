@@ -757,12 +757,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	curiousmedicine: {
 		onSwitchOut(pokemon) {
-			// Heal the Pokémon by 20% of its max HP
-			pokemon.heal(pokemon.baseMaxhp / 5);
+			pokemon.heal(pokemon.baseMaxhp / 4);
 	
-			// Check if the Pokémon has a status condition
 			if (pokemon.status) {
-				// Clear the status condition and display a message
 				this.add('-curestatus', pokemon, pokemon.status, '[from] ability: Curious Medicine');
 				pokemon.clearStatus();
 			}
@@ -5578,15 +5575,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 278,
 	},
 	cloudguard: {
-        onModifyDamage(damage, source, target, move) {
-            if (move.flags['contact']) {
-                return this.chainModify([2048, 4096]);
-            }
-        },
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				return this.chainModify([1024, 4096]);
+			}
+		},
         name: "Cloud Guard",
 		rating: 5,
 		num: 279,
-        shortDesc: "Reduces the damage of contact moves by 50%.",
+        shortDesc: "Reduces the damage of contact moves by 75%.",
     },
 	heroicheart: {
         onModifyMove(move, source, target) {
@@ -5604,8 +5601,81 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
         },
         name: "Heroic Heart",
 		rating: 5,
-		num: 279,
+		num: 280,
         shortDesc: "Water and Fighting moves change typing depending on the damage of each.",
+    },
+    imagination: {
+        onModifyMove(move, source, target) {
+            const allTypes = Object.keys(this.dex.data.TypeChart);
+
+            for (const type of allTypes) {
+                if (this.dex.getEffectiveness(type, target) > 0) {
+                    move.type = type;
+                    this.add('-message', `Imagination changed ${move.name} to ${move.type}-type!`);
+                    break;
+                }
+            }
+        },
+        name: "Imagination",
+		rating: 5,
+		num: 281,
+        shortDesc: "Changes move type to be super effective against the target.",
+    },
+	excitement: {
+        onSwitchIn(pokemon) {
+            const firstMove = pokemon.moves[0];
+            if (firstMove) {
+                const move = this.dex.moves.get(firstMove);
+                if (pokemon.canUseMove(move.id)) {
+                    this.add('-activate', pokemon, 'ability: Excitement');
+                    this.actions.useMove(firstMove, pokemon);
+                }
+            }
+        },
+        name: "Excitement",
+		rating: 5,
+		num: 282,
+        shortDesc: "Uses the first move in the move slot upon switch-in.",
+    },
+	scarfdown: {
+        onSwitchIn(pokemon) {
+            const berryTypeMapping = {
+                'occa': 'Fire',
+                'passho': 'Water',
+                'wacan': 'Electric',
+                'rindo': 'Grass',
+                'yache': 'Ice',
+                'chople': 'Fighting',
+                'kebia': 'Poison',
+                'shuca': 'Ground',
+                'coba': 'Flying',
+                'payapa': 'Psychic',
+                'tanga': 'Bug',
+                'charti': 'Rock',
+                'kasib': 'Ghost',
+                'haban': 'Dragon',
+                'colbur': 'Dark',
+                'babiri': 'Steel',
+                'chilan': 'Normal'
+            };
+
+            const item = pokemon.getItem();
+            const berryId = item.id.replace('berry', '');
+
+            if (berryTypeMapping[berryId]) {
+                const newType = berryTypeMapping[berryId];
+                pokemon.setType(newType);
+                this.add('-start', pokemon, 'typechange', newType, '[from] ability: Scarf Down');
+                
+                // Consume the berry
+                pokemon.setItem('');
+                this.add('-enditem', pokemon, item, '[from] ability: Scarf Down');
+            }
+        },
+        name: "Scarf Down",
+		rating: 5,
+		num: 283,
+        shortDesc: "If holding a damage-halving Berry, changes type to the type the Berry protects against and consumes the Berry.",
     },
 	// CAP
 	mountaineer: {
