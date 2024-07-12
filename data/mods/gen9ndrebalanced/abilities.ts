@@ -5687,34 +5687,86 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 283,
         shortDesc: "If holding a damage-halving Berry, changes type to the type the Berry protects against and consumes the Berry.",
     },
-	absorbent: {
+    absorbent: {
+        // Trigger on switch-in
         onSwitchIn(pokemon) {
-            let healed = false;  
+            let healed = false;
             let healAmount = 0;
-            const hazards = [
-                {hazard: 'spikes', layers: pokemon.side.getSideCondition('spikes')?.layers || 0},
-                {hazard: 'stealthrock', layers: pokemon.side.getSideCondition('stealthrock') ? 1 : 0},
-                {hazard: 'toxicspikes', layers: pokemon.side.getSideCondition('toxicspikes')?.layers || 0},
-            ];
 
-            for (const {hazard, layers} of hazards) {
-                if (layers > 0) {
-                    pokemon.side.removeSideCondition(hazard);
-                    healAmount += layers * pokemon.baseMaxhp / 8;
-                    healed = true;
-                }
+            // Check and remove Spikes
+            const spikesCondition = pokemon.side.getSideCondition('spikes');
+            if (spikesCondition) {
+                const spikesLayers = spikesCondition.layers || 1;  // Ensure at least 1 layer is considered
+                pokemon.side.removeSideCondition('spikes');
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('spikes'), '[from] ability: Absorbent', '[of] ' + pokemon);
+                healAmount += spikesLayers * pokemon.baseMaxhp / 8;
+                healed = true;
+            }
+
+            // Check and remove Stealth Rock
+            const stealthRockCondition = pokemon.side.getSideCondition('stealthrock');
+            if (stealthRockCondition) {
+                pokemon.side.removeSideCondition('stealthrock');
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('stealthrock'), '[from] ability: Absorbent', '[of] ' + pokemon);
+                healAmount += pokemon.baseMaxhp / 8;
+                healed = true;
+            }
+
+            // Check and remove Toxic Spikes
+            const toxicSpikesCondition = pokemon.side.getSideCondition('toxicspikes');
+            if (toxicSpikesCondition) {
+                const toxicSpikesLayers = toxicSpikesCondition.layers || 1;  // Ensure at least 1 layer is considered
+                pokemon.side.removeSideCondition('toxicspikes');
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('toxicspikes'), '[from] ability: Absorbent', '[of] ' + pokemon);
+                healAmount += toxicSpikesLayers * pokemon.baseMaxhp / 8;
+                healed = true;
             }
 
             if (healed) {
-                this.add('-activate', pokemon, 'ability: Absorbent');
                 pokemon.heal(healAmount);
+                this.add('-heal', pokemon, pokemon.getHealth, '[from] ability: Absorbent');
             }
-		},
+        },
         name: "Absorbent",
 		rating: 5,
 		num: 284,
         shortDesc: "Removes hazards on switch-in and heals based on hazards removed.",
 	},
+	safemode: {
+        onStart(pokemon) {
+            pokemon.addVolatile('safemode');
+        },
+        condition: {
+            duration: 1,
+            onDamage(damage, target, source, effect) {
+                if (effect && effect.id !== 'stealthrock' && effect.id !== 'spikes' && effect.id !== 'toxicspikes') {
+                    this.add('-message', `${target.name}'s Safe Mode protected it from damage!`);
+                    return 0;
+                }
+            },
+        },
+        name: "Safe Mode",
+		rating: 5,
+		num: 285,
+        shortDesc: "Takes no damage on the first turn it switches in, except from hazards.",
+    },
+	terminal: {
+        onModifyDamage(damage, source, target, move) {
+            const typeMod = this.dex.getEffectiveness(move.type, target);
+            if (typeMod > 0) {
+                return damage * 2;
+            } else if (typeMod === 0) {
+                return damage / 2;
+            } else if (typeMod < 0) {
+                this.add('-immune', target, '[from] ability: Terminal');
+                return 0;
+            }
+        },
+        name: "Terminal",
+		rating: 4,
+		num: 286,
+        shortDesc: "4x for Weak, 0.5x for Neutral, 0x for Resist."
+    },
 	// CAP
 	mountaineer: {
 		onDamage(damage, target, source, effect) {
