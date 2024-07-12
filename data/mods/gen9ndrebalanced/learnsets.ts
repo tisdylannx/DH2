@@ -20252,6 +20252,8 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		learnset: {
 			acidarmor: ["9L45", "8L45", "8V", "7L29", "7V", "6L29", "5L29", "4L64", "3L47"],
 			alluringvoice: ["9M"],
+			pressurewash: ["9L1"],
+			recover: ["9L1"],
 			aquaring: ["9L35", "8L35", "7L25", "6L25", "5L25", "4L43"],
 			aquatail: ["7T", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
@@ -67331,17 +67333,6 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			workup: ["9L1", "8M", "8L1", "7M", "7L61", "6L61", "5M", "5L61"],
 			xscissor: ["9M", "8M", "7M", "6M", "5M"],
 		},
-		eventData: [
-			{generation: 5, level: 15, moves: ["aquajet", "leer", "doublekick", "bubblebeam"], pokeball: "cherishball"},
-			{generation: 5, level: 50, moves: ["sacredsword", "hydropump", "aquajet", "swordsdance"], pokeball: "cherishball"},
-			{generation: 6, level: 15, moves: ["aquajet", "leer", "doublekick", "hydropump"], pokeball: "cherishball"},
-			{generation: 6, level: 100, moves: ["aquajet", "leer", "doublekick", "bubblebeam"], pokeball: "cherishball"},
-			{generation: 8, level: 65, moves: ["secretsword", "sacredsword", "swordsdance", "hydropump"]},
-		],
-		eventOnly: true,
-	},
-	keldeoresolute: {
-		eventOnly: true,
 	},
 	meloetta: {
 		learnset: {
