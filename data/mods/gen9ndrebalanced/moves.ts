@@ -22299,4 +22299,40 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ground",
 	},
+	pressurewash: {
+        accuracy: 100,
+        basePower: 60,
+        category: "Special",
+        name: "Pressure Wash",
+        pp: 15,
+        priority: -6,
+        flags: { protect: 1, mirror: 1 },
+        type: "Water",
+        target: "normal",
+        secondary: null,
+		willCrit: true,
+        onHit(pokemon, source) {
+            let hazardsCleared = false;
+            if (pokemon.side.removeSideCondition('spikes')) {
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('spikes'), '[from] move: Pressure Wash', '[of] ' + source);
+                hazardsCleared = true;
+            }
+            if (pokemon.side.removeSideCondition('stealthrock')) {
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('stealthrock'), '[from] move: Pressure Wash', '[of] ' + source);
+                hazardsCleared = true;
+            }
+            if (pokemon.side.removeSideCondition('toxicspikes')) {
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('toxicspikes'), '[from] move: Pressure Wash', '[of] ' + source);
+                hazardsCleared = true;
+            }
+            if (pokemon.side.removeSideCondition('stickyweb')) {
+                this.add('-sideend', pokemon.side, this.dex.conditions.get('stickyweb'), '[from] move: Pressure Wash', '[of] ' + source);
+                hazardsCleared = true;
+            }
+            if (hazardsCleared) {
+                this.add('-message', 'Hazards cleared on the user\'s side of the field!');
+            }
+        },
+        shortDesc: "Clears hazards on user's side of the field. Always crits.",
+    },
 };
