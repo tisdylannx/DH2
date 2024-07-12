@@ -3559,12 +3559,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	ogerpon: {
 		tier: "OU",
 	},
-	ogerponwellspring: {
-		tier: "OUBL",
-	},
-	ogerponcornerstone: {
-		tier: "OUBL",
-	},
 	terapagos: {
 		tier: "Uber",
 	},
