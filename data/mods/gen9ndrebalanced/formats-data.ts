@@ -3564,7 +3564,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	},
 	ogerponcornerstone: {
 		tier: "OUBL",
-	}
+	},
 	terapagos: {
 		tier: "Uber",
 	},
