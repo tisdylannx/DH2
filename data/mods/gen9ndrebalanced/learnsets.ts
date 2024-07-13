@@ -4155,6 +4155,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			defensecurl: ["7V", "3T"],
 			detect: ["7V"],
 			toxicflood: ["9L1"],
+			detox: ["9L1"],
 			dig: ["8M", "8V", "6M", "5M", "4M", "3M"],
 			disable: ["8E", "7E", "7V", "6E", "5E", "4E", "3E"],
 			doubleedge: ["7V", "3T"],
@@ -4301,6 +4302,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			venomdrench: ["8M"],
 			venoshock: ["8M", "7M", "6M", "5M"],
 			watergun: ["7V"],
+			detox: ["9L1"],
 			waterpulse: ["7T", "6T", "4M", "3M"],
 		},
 		encounters: [
@@ -4310,6 +4312,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	nidoqueen: {
 		learnset: {
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
+			detox: ["9L1"],
 			aquatail: ["7T", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			avalanche: ["8M", "4M"],
@@ -13017,6 +13020,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		learnset: {
 			acidarmor: ["9L46", "8V", "7L46", "7V", "6L43", "5L42", "4L44", "3L34"],
 			acidspray: ["9M"],
+			detox: ["9L1"],
 			attract: ["7M", "7V", "6M", "5M", "4M", "3M"],
 			belch: ["9L52", "7L52", "6L52"],
 			bide: ["7V"],
@@ -13136,6 +13140,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			belch: ["9L52", "7L52"],
 			bite: ["9L1", "8V", "7L1"],
 			block: ["7T"],
+			detox: ["9L1"],
 			bodyslam: ["9M"],
 			brickbreak: ["9M", "8V", "7M"],
 			brutalswing: ["7M"],
@@ -39893,6 +39898,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			toxicspikes: ["9M"],
 			venomdrench: ["7E", "6E"],
 			venoshock: ["9M", "7M", "6M", "5M"],
+			detox: ["9L1"],
 			waterpulse: ["9M", "7T", "6T", "4M", "3M"],
 			wringout: ["7L44", "6L44", "5L54", "4L49"],
 			yawn: ["9L5", "7L5", "6L5", "5L6", "4L6", "3L6"],
@@ -39907,6 +39913,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			amnesia: ["9M", "9L12", "7L12", "6L12", "5L17", "4L17", "3L17"],
 			attract: ["7M", "6M", "5M", "4M", "3M"],
 			belch: ["9L49", "7L49", "6L46"],
+			detox: ["9L1"],
 			block: ["7T", "6T", "5T", "4T"],
 			bodypress: ["9M"],
 			bodyslam: ["9M", "9L0", "7L1", "6L26", "5L26", "4L26", "3T", "3L26"],
@@ -48090,6 +48097,8 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	kricketune: {
 		learnset: {
 			absorb: ["9L14", "7L14"],
+			agility: ["9L1"],
+            closecombat: ["9L14", "7L14"],
 			aerialace: ["9M", "7M", "6M", "5M", "4M"],
 			attract: ["7M", "6M", "5M", "4M"],
 			batonpass: ["9M"],
@@ -50382,6 +50391,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			toxic: ["9M", "9L27", "8L27", "7M", "7L27", "6M", "6L27", "5M", "5L27", "4M", "4L20"],
 			toxicspikes: ["9M"],
 			trailblaze: ["9M"],
+			detox: ["9L1"],
 			venomdrench: ["8M", "8L42", "7L37"],
 			venoshock: ["9M", "9L21", "8M", "8L21", "7M", "6M", "5M"],
 		},
@@ -50390,6 +50400,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		learnset: {
 			acidspray: ["9M", "8L9", "7L19", "6L32", "5L32"],
 			assurance: ["8M"],
+			detox: ["9L1"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			belch: ["9L43", "8L43", "7L43", "6L56"],
 			bite: ["9L18", "8L18", "7L21"],
