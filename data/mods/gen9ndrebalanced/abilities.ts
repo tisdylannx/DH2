@@ -2207,17 +2207,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 154,
 	},
 	keeneye: {
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			if (boost.accuracy && boost.accuracy < 0) {
-				delete boost.accuracy;
-				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Keen Eye", "[of] " + target);
-				}
-			}
+		onAnyInvulnerabilityPriority: 1,
+		onAnyInvulnerability(target, source, move) {
+			if (move && (source === this.effectState.target || target === this.effectState.target)) return 0;
 		},
-		onModifyMove(move) {
-			move.ignoreEvasion = true;
+		onAnyAccuracy(accuracy, target, source, move) {
+			if (move && (source === this.effectState.target || target === this.effectState.target)) {
+				return true;
+			}
+			return accuracy;
 		},
 		flags: {breakable: 1},
 		name: "Keen Eye",
@@ -3696,17 +3694,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1,
 		num: 155,
 	},
-	receiver: {
-		onAllyFaint(target) {
-			if (!this.effectState.target.hp) return;
-			const ability = target.getAbility();
-			if (ability.flags['noreceiver'] || ability.id === 'noability') return;
-			if (this.effectState.target.setAbility(ability)) {
-				this.add('-ability', this.effectState.target, ability, '[from] ability: Receiver', '[of] ' + target);
-			}
-		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
+    receiver: {
+        onModifyMove(move, attacker) {
+            if (typeof move.accuracy === 'number') {
+                move.accuracy *= 1.5;
+            }
+            if (move.category === 'Physical') {
+                move.basePower *= 1.3;
+                move.recoil = [1, 8];
+            }
+        },
 		name: "Receiver",
+		shortDesc: "Boosts accuracy by 1.5x and physical moves by 1.3x. 1/8 Recoil.",
 		rating: 0,
 		num: 222,
 	},
@@ -5688,12 +5687,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
         shortDesc: "If holding a damage-halving Berry, changes type to the type the Berry protects against and consumes the Berry.",
     },
     absorbent: {
-        // Trigger on switch-in
         onSwitchIn(pokemon) {
             let healed = false;
             let healAmount = 0;
 
-            // Check and remove Spikes
             const spikesCondition = pokemon.side.getSideCondition('spikes');
             if (spikesCondition) {
                 const spikesLayers = spikesCondition.layers || 1;  // Ensure at least 1 layer is considered
@@ -5703,7 +5700,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
                 healed = true;
             }
 
-            // Check and remove Stealth Rock
             const stealthRockCondition = pokemon.side.getSideCondition('stealthrock');
             if (stealthRockCondition) {
                 pokemon.side.removeSideCondition('stealthrock');
@@ -5712,7 +5708,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
                 healed = true;
             }
 
-            // Check and remove Toxic Spikes
             const toxicSpikesCondition = pokemon.side.getSideCondition('toxicspikes');
             if (toxicSpikesCondition) {
                 const toxicSpikesLayers = toxicSpikesCondition.layers || 1;  // Ensure at least 1 layer is considered
