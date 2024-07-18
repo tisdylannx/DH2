@@ -3696,16 +3696,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
     receiver: {
         onModifyMove(move, attacker) {
-            if (typeof move.accuracy === 'number') {
-                move.accuracy *= 1.5;
-            }
             if (move.category === 'Physical') {
-                move.basePower *= 1.3;
-                move.recoil = [1, 8];
+                move.basePower *= 1.5;
+                move.recoil = [1, 4];
             }
         },
 		name: "Receiver",
-		shortDesc: "Boosts accuracy by 1.5x and physical moves by 1.3x. 1/8 Recoil.",
+		shortDesc: "Boosts physical moves by 1.5x. 25% of damage dealt is recoiled.",
 		rating: 0,
 		num: 222,
 	},
@@ -5761,6 +5758,46 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 286,
         shortDesc: "4x for Weak, 0.5x for Neutral, 0x for Resist."
+    },
+	firststrike: {
+        onModifyDamage(damage, source, target, move) {
+            if (source.side.active.length === 1 && this.queue.willMove(source)) {
+                return this.chainModify(1.3);
+            }
+        },
+        name: "First Strike",
+        shortDesc: "If the Pokémon moves first, its damage is boosted by 30%.",
+    },
+	solidsupport: {
+        onModifyDefPriority: 6,
+        onModifyDef(def, pokemon) {
+            return this.chainModify(2);
+        },
+        name: "Solid Support",
+        shortDesc: "Doubles the user's Defense.",
+    },
+	fightingspirit: {
+        onBasePowerPriority: 8,
+        onBasePower(basePower, attacker, defender, move) {
+            if (move.type === 'Fighting') {
+                this.debug('Fighting Spirit boost');
+                return this.chainModify(1.5);
+            }
+        },
+        name: "Fighting Spirit",
+        shortDesc: "Increases the power of Fighting moves by 50%.",
+    },
+	neurotox: {
+        onModifyMovePriority: -1,
+        onModifyMove(move, attacker) {
+            if (move.category === 'Physical' || move.category === 'Special') {
+                const higherStat = (attacker.storedStats.atk > attacker.storedStats.spa) ? 'Physical' : 'Special';
+                move.category = higherStat;
+                this.add('-activate', attacker, 'ability: Neurotox', move.name, higherStat);
+            }
+        },
+        name: "Neurotox",
+        shortDesc: "Changes moves to the category (physical/special) based on the higher attacking stat.",
     },
 	// CAP
 	mountaineer: {
