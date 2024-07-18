@@ -1227,7 +1227,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	medicham: {
-		tier: "UU",
+		tier: "Uber",
 	},
 	electrike: {
 		tier: "LC",
@@ -3488,13 +3488,13 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	chienpao: {
-		tier: "UU",
+		tier: "Uber",
 	},
 	wochien: {
 		tier: "UU",
 	},
 	chiyu: {
-		tier: "UU",
+		tier: "Uber",
 	},
 	koraidon: {
 		tier: "Uber",
@@ -3671,7 +3671,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "UU"
 	},
 	medichammega: {
-		tier: "OU"
+		tier: "Uber"
 	},
 	manectricmega: {
 		tier: "UU"
