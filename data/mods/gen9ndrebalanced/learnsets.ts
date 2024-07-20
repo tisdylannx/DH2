@@ -11447,6 +11447,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		learnset: {
 			aerialace: ["7M", "6M", "5M"],
 			bubblebarrage: ["9L1"],
+			mindhealing: ["9L1"],
 			mindglide: ["9L1"],
 			afteryou: ["7T", "6T", "5T"],
 			amnesia: ["9M", "9L27", "8M", "8L27", "8V", "7L43", "7V", "6L43", "5L43", "4L47", "3L36"],
@@ -11703,6 +11704,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			waterpulse: ["9M", "9L18", "8L18"],
 			weatherball: ["9M", "8M"],
 			whirlpool: ["9M", "8M"],
+			mindhealing: ["9L1"],
 			withdraw: ["9L1", "8L1"],
 			wonderroom: ["8M"],
 			yawn: ["9L9", "8L9"],
@@ -11713,6 +11715,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		learnset: {
 			afteryou: ["7T", "6T", "5T"],
 			allyswitch: ["7T"],
+			mindhealing: ["9L1"],
 			mindglide: ["9L1"],
 			bubblebarrage: ["9L1"],
 			amnesia: ["9M", "9L27", "8M", "8L27"],
@@ -11855,6 +11858,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			acid: ["9L1", "8L1"],
 			acidspray: ["9M"],
 			mindglide: ["9L1"],
+			mindhealing: ["9L1"],
 			amnesia: ["9M", "9L27", "8M", "8L27"],
 			attract: ["8M"],
 			avalanche: ["9M", "8M"],
@@ -20580,6 +20584,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["9L15", "8L15", "7L9"],
 			batonpass: ["9M", "9L1", "8M", "8L1"],
+			mindhealing: ["9L1"],
 			bite: ["9L1", "8L1"],
 			bodyslam: ["9M", "8M", "3T"],
 			calmmind: ["9M", "8M", "7M", "6M", "5M", "4M", "3M"],
@@ -20691,6 +20696,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			assurance: ["9L25", "8M", "8L25", "7L25", "6L25", "5L25", "4L43"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["9L15", "8L15", "7L9"],
+			mindhealing: ["9L1"],
 			batonpass: ["9M", "9L1", "8M", "8L1"],
 			bite: ["9L1", "8L1"],
 			bodyslam: ["9M", "8M", "3T"],
@@ -46644,6 +46650,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			avalanche: ["4M"],
 			bind: ["7T", "6T", "5T"],
 			bodyslam: ["3T"],
+			mindhealing: ["9L1"],
 			brickbreak: ["9M", "7M", "6M", "5M", "4M", "3M"],
 			brutalswing: ["7M"],
 			calmmind: ["9M", "7M", "6M", "5M", "4M", "3M"],
@@ -84297,6 +84304,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	hatterene: {
 		learnset: {
 			agility: ["9M"],
+			mindhealing: ["9L1"],
 			aromatherapy: ["8L15"],
 			aromaticmist: ["9L15"],
 			attract: ["8M"],
@@ -91886,6 +91894,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	wochien: {
 		learnset: {
 			absorb: ["9L1"],
+			mindhealing: ["9L1"],
 			bodypress: ["9M"],
 			bodyslam: ["9M"],
 			bulletseed: ["9M"],
