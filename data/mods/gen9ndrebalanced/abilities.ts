@@ -5762,11 +5762,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	firststrike: {
         onModifyDamage(damage, source, target, move) {
             if (source.side.active.length === 1 && this.queue.willMove(source)) {
-                return this.chainModify(1.3);
+                return this.chainModify(1.5);
             }
         },
         name: "First Strike",
-        shortDesc: "If the Pokémon moves first, its damage is boosted by 30%.",
+        shortDesc: "If the Pokémon moves first, its damage is boosted by 50%.",
     },
 	solidsupport: {
         onModifyDefPriority: 6,
@@ -5774,7 +5774,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
             return this.chainModify(2);
         },
         name: "Solid Support",
-        shortDesc: "Doubles the user's Defense.",
+        shortDesc: "Doubles the Pokemon's Defense.",
     },
 	fightingspirit: {
         onBasePowerPriority: 8,
