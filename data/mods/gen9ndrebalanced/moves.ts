@@ -4422,6 +4422,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		terrain: 'grassyterrain',
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -5619,15 +5620,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	firespin: {
 		num: 83,
-		accuracy: 85,
-		basePower: 35,
+		accuracy: 100,
+		basePower: 20,
 		category: "Special",
 		name: "Fire Spin",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		volatileStatus: 'partiallytrapped',
-		secondary: null,
+		secondary: {
+			chance: 100,
+			boosts: {
+				spe: -1,
+			},
+		},
 		target: "normal",
 		type: "Fire",
 		contestType: "Beautiful",
@@ -11872,14 +11878,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Meditate",
 		pp: 40,
 		priority: 0,
-		flags: {snatch: 1, metronome: 1},
+		flags: {snatch: 1, heal: 1, metronome: 1},
 		boosts: {
-			atk: 1,
+			spa: 1,
 		},
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: {boost: {atk: 1}},
+		zMove: {boost: {spa: 2}},
 		contestType: "Beautiful",
 	},
 	mefirst: {
@@ -14926,6 +14932,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1, bullet: 1},
+		weather: 'sunnyday',
 		secondary: {
 			chance: 10,
 			status: 'brn',
@@ -17779,6 +17786,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		weather: 'raindance',
 		critRatio: 2,
 		tracksTarget: true,
 		secondary: null,
@@ -22377,9 +22385,40 @@ export const Moves: {[moveid: string]: MoveData} = {
         pp: 10,
         priority: 0,
         flags: {heal: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
         type: "Rock",
-        shortDesc: "Heals the user by 33% of its max HP.",
-        heal: [1, 3], 
+        shortDesc: "Heals the user by 100% of its max HP. Two Turns.",
+        heal: [1, 1], 
         target: "self",
     },
+	mindhealing: {
+		num: 96,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Mind Healing",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, heal: 1, metronome: 1},
+		heal: [1, 3],
+		boosts: {
+			spd: 1,
+			def: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		shortDesc: "+1 Sp. Def, +1 Def. Heals 1/3 of max HP.",
+		contestType: "Beautiful",
+	},
 };
