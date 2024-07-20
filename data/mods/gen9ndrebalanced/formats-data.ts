@@ -3626,10 +3626,10 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "UU"
 	},
 	mewtwomegax: {
-		tier: "UU"
+		tier: "Uber"
 	},
 	mewtwomegay: {
-		tier: "UU"
+		tier: "Uber"
 	},
 	ampharosmega: {
 		tier: "UU"
