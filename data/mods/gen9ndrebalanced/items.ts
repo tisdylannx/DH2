@@ -7717,17 +7717,19 @@ export const Items: {[itemid: string]: ItemData} = {
     colororb: {
 		name: "Color Orb",
 		spritenum: 249,
-        shortDesc: "Holder's Sp. Atk is 1.5x, but move type is random.",
+		fling: {
+            basePower: 30,
+        },
+        shortDesc: "Holder's Sp. Atk is 1.5x, but moves have a random type.",
         onModifySpAPriority: 1,
         onModifySpA(spa, pokemon) {
             return this.chainModify(1.5);
         },
         onModifyMovePriority: -1,
-        onModifyMove(move) {
-            const allTypes = Object.keys(this.dex.data.TypeChart);
-            const randomType = allTypes[this.random(allTypes.length)];
+        onModifyMove(move, pokemon) {
+            const types = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy'];
+            const randomType = types[Math.floor(Math.random() * types.length)];
             move.type = randomType;
-            this.add('-message', `Mystical Orb changed ${move.name} to ${move.type}-type!`);
         },
     },
 	// CAP items
