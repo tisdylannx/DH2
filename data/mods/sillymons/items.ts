@@ -47,7 +47,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	magnet: {
 		inherit: true,
-		shortDesc: "Holder's electric-type attacks have 1.2x power. Prevent opposing Steel-type Pokemon from switching out."
+		shortDesc: "Holder's electric-type attacks have 1.2x power. Prevent opposing Steel-type Pokemon from switching out.",
 		onFoeTrapPokemon(pokemon) {
 			if (pokemon.hasType('Steel') && pokemon.isAdjacent(this.effectState.target)) {
 				pokemon.tryTrap(true);
