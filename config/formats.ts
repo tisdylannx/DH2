@@ -61,36 +61,6 @@ export const Formats: FormatList = [
 		teambuilderFormat: 'PU',
 	},
 	{
-		name: "[Gen 9] National Dex NFE",
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
-		],
-		teambuilderFormat: "National Dex",
-		mod: 'gen9ndnfe',
-		ruleset: ['Standard Natdex'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 9] National Dex NFE UU",
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
-		],
-		teambuilderFormat: "National Dex UU",
-		mod: 'gen9ndnfe',
-		ruleset: ['[Gen 9] National Dex NFE'],
-		banlist: ['ND OU', 'ND UUBL'],
-	},
-	{
-		name: "[Gen 9] National Dex NFE RU",
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
-		],
-		teambuilderFormat: "National Dex RU",
-		mod: 'gen9ndnfe',
-		ruleset: ['[Gen 9] National Dex NFE UU'],
-		banlist: ['ND UU', 'ND RUBL'],
-	},
-	{
 		name: "[Gen 9] National Dex Rebalanced OU",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
@@ -99,5 +69,15 @@ export const Formats: FormatList = [
 		mod: 'gen9ndrebalanced',
 		ruleset: ['Standard Natdex', 'Terastal Clause'],
 		banlist: ['ND Uber'],
+	},
+	{
+		name: "[Gen 9] SillyMons OU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "OU",
+		mod: 'sillymons',
+		ruleset: ['Standard', 'Terastal Clause'],
+		banlist: ['AG', 'Uber'],
 	},
 ];
