@@ -49,12 +49,14 @@ export const Items: {[itemid: string]: ItemData} = {
 		inherit: true,
 		shortDesc: "Holder's electric-type attacks have 1.2x power. Prevent opposing Steel-type Pokemon from switching out."
 		onFoeTrapPokemon(pokemon) {
-			if (!pokemon.hasType('Steel')) return;
-			if (pokemon.hasAbility('runaway') || pokemon.hasAbility('shadowtag')) return;
-			pokemon.tryTrap();
+			if (pokemon.hasType('Steel') && pokemon.isAdjacent(this.effectState.target)) {
+				pokemon.tryTrap(true);
+			}
 		},
-		onFoeMaybeTrapPokemon(pokemon) {
-			if (pokemon.hasType('Steel') && this.isAdjacent(pokemon, this.effectState.target)) {
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			if (!source) source = this.effectState.target;
+			if (!source || !pokemon.isAdjacent(source)) return;
+			if (!pokemon.knownType || pokemon.hasType('Steel')) {
 				pokemon.maybeTrapped = true;
 			}
 		},
