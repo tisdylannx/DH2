@@ -27,7 +27,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	firstimpression: {
 		inherit: true,
-		shortDesc: "Hits first. First turn out only. 100% Flinch."
+		shortDesc: "Hits first. First turn out only. 100% Flinch.",
 		secondary: {
 			chance: 100,
 			volatileStatus: 'flinch',
