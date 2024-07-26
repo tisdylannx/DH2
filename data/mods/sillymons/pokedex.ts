@@ -23,7 +23,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Flash Fire", H: "Sharpness"},
 	},
-	revaroom: {
+	revavroom: {
 		inherit: true,
 		abilities: {0: "Overcoat", H: "Quick Start"},
 	},
