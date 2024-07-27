@@ -22025,4 +22025,28 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+	rebuild: {
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        name: "Rebuild",
+        pp: 10,
+        priority: 0,
+        flags: {heal: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+        type: "Normal",
+        shortDesc: "Heals the user by 100% of its max HP. Two Turns.",
+        heal: [1, 1], 
+        target: "self",
+    },
 };
