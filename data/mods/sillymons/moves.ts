@@ -43,6 +43,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	suckerpunch: {
 		inherit: true,
-		basepower: 60,
+		basePower: 60,
+	},
+    flowertrick: {
+    inherit: true,
+	shortDesc: "Always crits. Summons Grassy Terrain before hitting.",
+    onPrepareHit(target, source) {
+        this.field.setTerrain('grassyterrain');
+	    },
+	},
+	psyshieldbash: {
+		inherit: true,
+		basePower: 80,
+		self: {
+			boosts: {
+				def: 2,
+			},
+		},
+		overrideOffensiveStat: 'def',
+		shortDesc: "Uses Defense for damage. Raises Defense by 2.",
+	},
+	rebuild: {
+		inherit: true,
 	},
 };
