@@ -22,8 +22,11 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 	},
 	boosterenergy: {
-		inherit: true,
-		shortDesc: "Activates the Protosynthesis or Quark Drive abilities. Multi-Use.",
+		name: "Booster Energy",
+		spritenum: 745,
+		fling: {
+			basePower: 30,
+		},
 		onStart() {
 			this.effectState.started = true;
 		},
@@ -44,10 +47,12 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (source.baseSpecies.tags.includes("Paradox")) return false;
 			return true;
 		},
-	},
+		num: 1880,
+		gen: 9,
+	},	
 	magnet: {
 		inherit: true,
-		shortDesc: "Holder's electric-type attacks have 1.2x power. Prevent opposing Steel-type Pokemon from switching out.",
+		shortDesc: "Prevents opposing Steel-type Pokemon from switching out.",
 		onFoeTrapPokemon(pokemon) {
 			if (pokemon.hasType('Steel') && pokemon.isAdjacent(this.effectState.target)) {
 				pokemon.tryTrap(true);
