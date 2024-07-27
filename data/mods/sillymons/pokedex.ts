@@ -5,7 +5,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
 	abomasnow: {
 		inherit: true,
-		abilities: {0: "White Out", H: "Soundproof"},
+		abilities: {0: "Snow Warning", H: "Soundproof"},
 	},
 	hydrapple: {
 		inherit: true,
@@ -17,7 +17,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
 	avalugg: {
 		inherit: true,
-		abilities: {0: "Ice Scales", 1: "Ice Body", H: "Sturdy"},
+		abilities: {0: "Solid Support", 1: "Ice Body", H: "Sturdy"},
 	},
 	ceruledge: {
 		inherit: true,
