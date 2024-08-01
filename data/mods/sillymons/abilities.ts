@@ -55,4 +55,52 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Solid Support",
 		shortDesc: "This Pokemon's Defense is doubled.",
 	},
-	};
+	assassin: {
+		name: "Assassin",
+		onStart(pokemon) {
+			this.add('-ability', pokemon, 'Sharpness');
+		},
+		onModifyMove(move, pokemon, target) {
+			if (move.category !== 'Status') {
+				move.critRatio = 2;
+			}
+		},
+		shortDesc: "This Pokemon's attacks have double crit chance.",
+	},
+	mitosis: {
+		name: "Mitosis",
+		shortDesc: "Heals 1/3 max HP when switching out.",
+		onSwitchOut(pokemon) {
+			this.heal(pokemon.maxhp / 3)
+		},
+	},
+	executioner: {
+		name: "Executioner",
+		shortDesc: "If the target is below 33% HP, this Pokemon's attacks will cause it to faint.",
+		onModifyDamage(damage, source, target, move) {
+			if (target.hp <= target.maxhp / 3) {
+				return target.hp;
+			}
+		},
+	},
+	liquidize: {
+		name: "Liquidize",
+		onModifyTypePriority: 1,
+		onModifyType(types, pokemon, target, move) {
+			if (move.type === 'Normal') {
+				types[0] = 'Water';
+			}
+		},
+		shortDesc: "This Pokemon's Normal attacks become Water Type.",
+	},
+	flareup: {
+		name: "Flare Up",
+		onModifyTypePriority: 1,
+		onModifyType(types, pokemon, target, move) {
+			if (move.type === 'Normal') {
+				types[0] = 'Fire';
+			}
+		},
+		shortDesc: "This Pokemon's Normal attacks become Fire Type.",
+	},
+};
