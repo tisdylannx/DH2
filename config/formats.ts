@@ -80,4 +80,14 @@ export const Formats: FormatList = [
 		ruleset: ['Standard', 'Terastal Clause'],
 		banlist: ['AG', 'Uber'],
 	},
+	{
+		name: "[Gen 5] Unova Dex OU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "OU",
+		mod: 'gen5unovadex',
+		ruleset: ['Standard'],
+		banlist: ['Uber'],
+	},
 ];
