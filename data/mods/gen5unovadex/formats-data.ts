@@ -458,12 +458,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	kyurem: {
 		tier: "OU",
 	},
-	kyuremblack: {
-		tier: "OU",
-	},
-	kyuremwhite: {
-		tier: "Uber",
-	},
 	tornadustherian: {
 		isNonstandard: "Future",
 		tier: "Illegal",
