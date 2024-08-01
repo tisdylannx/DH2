@@ -3,10 +3,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Sturdy", H: "Battler's Aura"},
 	},
-	abomasnow: {
-		inherit: true,
-		abilities: {0: "Snow Warning", H: "Soundproof"},
-	},
 	hydrapple: {
 		inherit: true,
 		abilities: {0: "Well-Baked Body", 1: "Regenerator", H: "Sticky Hold"},
@@ -23,8 +19,30 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Flash Fire", H: "Sharpness"},
 	},
-	revavroom: {
+	serperior: {
 		inherit: true,
-		abilities: {0: "Overcoat", H: "Quick Start"},
+		types: ["Grass", "Dragon"],
+		abilities: {0: "Overgrow", H: "Assassin"},
+	},
+	samurott: {
+		inherit: true,
+		types: ["Water"],
+		abilities: {0: "Torrent", H: "Executioner"},
+	},
+	reuniclus: {
+		inherit: true,
+		abilities: {0: "Overcoat", 1: "Magic Guard", H: "Mitosis"},
+	},
+	suicune: {
+		inherit: true,
+		abilities: {0: "Pressure", H: "Liquidize"},
+	},
+	raikou: {
+		inherit: true,
+		abilities: {0: "Pressure", H: "Galvanize"},
+	},
+	entei: {
+	    inherit: true,
+		abilities: {0: "Pressure", H: "Flare Up"},
 	},
 };
