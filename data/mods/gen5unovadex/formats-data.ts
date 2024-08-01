@@ -500,3 +500,4 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Unobtainable",
 		tier: "Unreleased",
 	},
+};
