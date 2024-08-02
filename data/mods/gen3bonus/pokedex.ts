@@ -174,7 +174,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	obstagoon: {
 		inherit: true,
 		abilities: {0: "Run Away", 1: "Intimidate"},
-	}
+	},
 	darumakagalar: {
 		inherit: true,
 	},
