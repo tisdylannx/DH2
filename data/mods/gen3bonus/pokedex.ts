@@ -313,7 +313,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Rock Head", 1: "Sheer Force"},
 	},
-	rufflet: {
+	rowlet: {
 		inherit: true,
 		abilities: {0: "Overgrow"},
 	},
