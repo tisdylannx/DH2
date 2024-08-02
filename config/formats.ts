@@ -71,6 +71,16 @@ export const Formats: FormatList = [
 		banlist: ['ND Uber'],
 	},
 	{
+		name: "[Gen 3] Bonus OU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "OU",
+		mod: 'gen3bonus',
+		ruleset: ['Standard'],
+		banlist: ['Uber'],
+	},
+	{
 		name: "[Gen 9] SillyMons OU",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
@@ -79,6 +89,46 @@ export const Formats: FormatList = [
 		mod: 'sillymons',
 		ruleset: ['Standard', 'Terastal Clause'],
 		banlist: ['AG', 'Uber'],
+	},
+	{
+		name: "[Gen 9] SillyMons UU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "UU",
+		mod: 'sillymons',
+		ruleset: ['[Gen 9] SillyMons OU'],
+		banlist: ['UUBL', 'OU'],
+	},
+	{
+		name: "[Gen 9] SillyMons RU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "RU",
+		mod: 'sillymons',
+		ruleset: ['[Gen 9] SillyMons UU'],
+		banlist: ['RUBL', 'UU'],
+	},
+	{
+		name: "[Gen 9] SillyMons NU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "NU",
+		mod: 'sillymons',
+		ruleset: ['[Gen 9] SillyMons RU'],
+		banlist: ['NUBL', 'RU'],
+	},
+	{
+		name: "[Gen 9] SillyMons PU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "PU",
+		mod: 'sillymons',
+		ruleset: ['[Gen 9] SillyMons NU'],
+		banlist: ['PUBL', 'NU'],
 	},
 	{
 		name: "[Gen 5] Unova Dex OU",
