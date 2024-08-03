@@ -69,6 +69,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ninetalesalola: {
 		inherit: true,
+		types: ["Ice", "Psychic"],
 		abilities: {0: "Snow Warning", 1: "Vital Spirit"},
 		gen: 3,
 	},
@@ -195,12 +196,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	corsolagalar: {
 		inherit: true,
-		abilities: {0: "Regenerator", 1: "Magic Guard"},
+		abilities: {0: "Pressure"},
 		gen: 3,
 	},
 	cursola: {
 		inherit: true,
-		abilities: {0: "Regenerator", 1: "Magic Guard"},
+		abilities: {0: "Pressure"},
 		gen: 3,
 	},
 	zigzagoongalar: {
@@ -335,6 +336,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Chlorophyll"},
 		gen: 3,
 	},
+	lilliganthisui: {
+		inherit: true,
+		abilities: {0: "Chlorophyll"},
+		gen: 3,
+	},
 	zoruahisui: {
 		inherit: true,
 		abilities: {0: "Illusion"},
@@ -362,28 +368,27 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	goomy: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Natural Cure"},
 		gen: 3,
 	},
 	sliggoo: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Natural Cure"},
 		gen: 3,
 	},
 	goodra: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Natural Cure"},
 		gen: 3,
 	},
-
 	sliggoohisui: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Shell Armor"},
 		gen: 3,
 	},
 	goodrahisui: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Shell Armor"},
 		gen: 3,
 	},
 	avalugghisui: {
@@ -413,12 +418,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	wooperpaldea: {
 		inherit: true,
-		abilities: {0: "Water Absorb", 1: "Regenerator"},
+		abilities: {0: "Water Absorb", 1: "Poison Point"},
 		gen: 3,
 	},
 	clodsire: {
 		inherit: true,
-		abilities: {0: "Water Absorb", 1: "Regenerator"},
+		abilities: {0: "Water Absorb", 1: "Poison Point"},
 		gen: 3,
 	},
 	taurospaldeacombat: {
@@ -449,6 +454,77 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	slowkinggalar: {
 		inherit: true,
 		abilities: {0: "Poison Point"},
+		gen: 3,
+	},
+	sprigatito: {
+		inherit: true,
+		abilities: {0: "Overgrow"},
+		gen: 3,
+	},
+	floragato: {
+		inherit: true,
+		abilities: {0: "Overgrow"},
+		gen: 3,
+	},
+	meowscarada: {
+		inherit: true,
+		abilities: {0: "Overgrow"},
+		gen: 3,
+	},
+	fuecoco: {
+		inherit: true,
+		abilities: {0: "Blaze"},
+		gen: 3,
+	},
+	crocalor: {
+		inherit: true,
+		abilities: {0: "Blaze"},
+		gen: 3,
+	},
+	skeledirge: {
+		inherit: true,
+		abilities: {0: "Blaze"},
+		gen: 3,
+	},
+	quaxly: {
+		inherit: true,
+		abilities: {0: "Torrent"},
+		gen: 3,
+	},
+	quaxwell: {
+		inherit: true,
+		abilities: {0: "Torrent"},
+		gen: 3,
+	},
+	quaquaval: {
+		inherit: true,
+		abilities: {0: "Torrent"},
+		gen: 3,
+	},
+	pawmi: {
+		inherit: true,
+		abilities: {0: "Volt Absorb"},
+		gen: 3,
+	},
+	pawmo: {
+		inherit: true,
+		abilities: {0: "Volt Absorb"},
+		gen: 3,
+	},
+	pawmot: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 115, def: 60, spa: 100, spd: 60, spe: 115},
+		abilities: {0: "Volt Absorb"},
+		gen: 3,
+	},
+	frillish: {
+		inherit: true,
+		abilities: {0: "Water Absorb"},
+		gen: 3,
+	},
+	jellicent: {
+		inherit: true,
+		abilities: {0: "Water Absorb"},
 		gen: 3,
 	},
 };
