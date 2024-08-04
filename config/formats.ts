@@ -141,7 +141,7 @@ export const Formats: FormatList = [
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 3] Objects"
+		name: "[Gen 3] Objects",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
 		],
