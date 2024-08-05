@@ -149,4 +149,11 @@ export const Formats: FormatList = [
 		ruleset: ['Standard'],
 		banlist: ['Uber'],
 	},
+	{
+		name: "[Gen 9] Paldea Dex OU",
+		teambuilderFormat: "OU",
+		mod: 'gen9paldeaonly',
+		ruleset: ['Standard'],
+		banlist: ['Uber'],
+	}
 ];
