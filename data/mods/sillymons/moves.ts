@@ -71,12 +71,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const waterEffectiveness = this.dex.getEffectiveness('Water', target.types)
 			move.type = fireEffectiveness > waterEffectiveness ? 'Fire' : 'Water'
 		},
-
+		basePower: 70,
 		secondary: {
 			chance: 15,
 			volatileStatus: 'burn',
-		}
-		basePower: 70,
+		},
 	},
 	fly: {
 		inherit: true,
