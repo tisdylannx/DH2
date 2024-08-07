@@ -27,50 +27,6 @@ export const Formats: FormatList = [
 		// name: "serverspecials",
 	},
 	{
-		name: "[Gen 3] GPT OU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3710848/">National Dex Metagame Discussion</a>`,
-		],
-
-		mod: 'gen3gpt',
-		ruleset: ['Standard'],
-		banlist: ['Uber', 'Mean Look + Baton Pass', 'Spider Web + Baton Pass'],
-	},
-	{
-		name: "[Gen 3] GPT UU",
-
-		mod: 'gen3gpt',
-		ruleset: ['[Gen 3] GPT OU'],
-		banlist: ['OU', 'UUBL'],
-		teambuilderFormat: 'UU',
-	},
-	{
-		name: "[Gen 3] GPT NU",
-
-		mod: 'gen3gpt',
-		ruleset: ['[Gen 3] GPT UU'],
-		banlist: ['UU', 'NUBL'],
-		teambuilderFormat: 'NU',
-	},
-	{
-		name: "[Gen 3] GPT PU",
-
-		mod: 'gen3gpt',
-		ruleset: ['[Gen 3] GPT NU'],
-		banlist: ['NU', 'PUBL'],
-		teambuilderFormat: 'PU',
-	},
-	{
-		name: "[Gen 9] National Dex Rebalanced OU",
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
-		],
-		teambuilderFormat: "National Dex OU",
-		mod: 'gen9ndrebalanced',
-		ruleset: ['Standard Natdex', 'Terastal Clause'],
-		banlist: ['ND Uber'],
-	},
-	{
 		name: "[Gen 3] Bonus OU",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
@@ -130,30 +86,4 @@ export const Formats: FormatList = [
 		ruleset: ['[Gen 9] SillyMons NU'],
 		banlist: ['PUBL', 'NU'],
 	},
-	{
-		name: "[Gen 5] Unova Dex OU",
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
-		],
-		teambuilderFormat: "OU",
-		mod: 'gen5unovadex',
-		ruleset: ['Standard'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 3] Objects",
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
-		],
-		mod: 'gen3objects',
-		ruleset: ['Standard'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 9] Paldea Dex OU",
-		teambuilderFormat: "OU",
-		mod: 'gen9paldeaonly',
-		ruleset: ['Standard'],
-		banlist: ['Uber'],
-	}
 ];
