@@ -45,4 +45,12 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	    inherit: true,
 		abilities: {0: "Pressure", H: "Flare Up"},
 	},
+	shellder: {
+		inherit: true,
+		abilities: {0: "Shell Shield", 1: "Skill Link", H: "Overcoat"},
+	},
+	cloyster: {
+		inherit: true,
+		abilities: {0: "Shell Shield", 1: "Skill Link", H: "Overcoat"},
+	},
 };
