@@ -53,8 +53,42 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		basePower: 60,
 	},
-	overheat: {
+	kowtowcleave: {
 		inherit: true,
-		basePower: 150,
+			basePower: 85,
+			shortDesc: "If target's Defense is raised, this move does 1.5x damage.",
+			onModifyDamage(damage, source, target) {
+				if (target.boosts.def > 0) {
+					return this.chainModify(1.5)
+				}
+			},
+		},
+	scald: {
+		inherit: true,
+		shortDesc: "Becomes Fire or Water, whichever is more effective. 15% chance to burn.",
+		onModifyType(move, pokemon, target) {
+			const fireEffectiveness = this.dex.getEffectiveness('Fire', target.types)
+			const waterEffectiveness = this.dex.getEffectiveness('Water', target.types)
+			move.type = fireEffectiveness > waterEffectiveness ? 'Fire' : 'Water'
+		},
+
+		secondary: {
+			chance: 15,
+			volatileStatus: 'burn',
+		}
+		basePower: 70,
+	},
+	fly: {
+		inherit: true,
+		shortDesc: "If successful, the user switches out and the selected Pokemon switches in.",
+		selfSwitch: true,
+		onTryHit(target, source, move) {
+			if (!this.canSwitch(source.side)) {
+				delete move.selfSwitch
+				return false
+			}
+		},
+		target: "normal",
+		type: "Flying",
 	},
 };
