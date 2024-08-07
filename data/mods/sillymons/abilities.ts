@@ -17,7 +17,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	regenerator: {
 		inherit: true,
-		shortDesc: "This Pokemon resotres 1/4 of it's maximum HP, rounded down, when it switches out.",
+		shortDesc: "This Pokemon restores 1/4 of it's maximum HP, rounded down, when it switches out.",
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 4);
 		},
@@ -85,22 +85,85 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	liquidize: {
 		name: "Liquidize",
-		onModifyTypePriority: 1,
-		onModifyType(types, pokemon, target, move) {
-			if (move.type === 'Normal') {
-				types[0] = 'Water';
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Water';
+				move.typeChangerBoosted = this.effect;
 			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
 		},
 		shortDesc: "This Pokemon's Normal attacks become Water Type.",
 	},
 	flareup: {
 		name: "Flare Up",
-		onModifyTypePriority: 1,
-		onModifyType(types, pokemon, target, move) {
-			if (move.type === 'Normal') {
-				types[0] = 'Fire';
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Fire';
+				move.typeChangerBoosted = this.effect;
 			}
 		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+		},
 		shortDesc: "This Pokemon's Normal attacks become Fire Type.",
+	},	
+	libero: {
+		inherit: true,
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Libero');
+			}
+		},
+		onSwitchIn() {},
+		rating: 4.5,
+	},
+	protean: {
+		inherit: true,
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Protean');
+			}
+		},
+		onSwitchIn() {},
+		rating: 4.5,
+	},
+	shellshield: {
+		name: "Shell Shield",
+		onBoost(boost, target, source, effect) {
+			if (source && target === source) return
+			let showMsg = false
+			for (let i in boost) {
+				// @ts-ignore
+				if (boost[i] < 0) {
+					// @ts-ignore
+					delete boost[i]
+					showMsg = true
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add("-fail", target, "unboost", "[from] ability: Shell Shield", "[of] " + target)
+			}
+		},
+		shortDesc: "Prevents stat lowering on this Pokemon.",
 	},
 };
