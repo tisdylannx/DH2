@@ -53,4 +53,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Shell Shield", 1: "Skill Link", H: "Overcoat"},
 	},
+	ironcrown: {
+		inherit: true,
+		abilities: {0: "Quark Drive", H: "Magic Guard"},
+	}
 };
