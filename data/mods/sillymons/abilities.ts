@@ -149,19 +149,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	shellshield: {
 		name: "Shell Shield",
-		onBoost(boost, target, source, effect) {
-			if (source && target === source) return
-			let showMsg = false
-			for (let i in boost) {
-				// @ts-ignore
-				if (boost[i] < 0) {
-					// @ts-ignore
-					delete boost[i]
-					showMsg = true
+		onTryBoost(boost, target, source, effect) {
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
 				}
 			}
 			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: Shell Shield", "[of] " + target)
+				this.add("-fail", target, "unboost", "[from] ability: Shell Shield", "[of] " + target);
 			}
 		},
 		shortDesc: "Prevents stat lowering on this Pokemon.",
