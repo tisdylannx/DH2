@@ -78,16 +78,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 	},
 	fly: {
-		inherit: true,
-		shortDesc: "If successful, the user switches out and the selected Pokemon switches in.",
-		selfSwitch: true,
-		onTryHit(target, source, move) {
-			if (!this.canSwitch(source.side)) {
-				delete move.selfSwitch
-				return false
-			}
+		num: 19,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Fly",
+		pp: 20,
+		priority: -6,
+		flags: {metronome: 1},
+		onTry(source) {
+			return !!this.canSwitch(source.side);
 		},
-		target: "normal",
+		selfSwitch: true,
+		secondary: null,
+		target: "self",
 		type: "Flying",
+		zMove: {effect: 'heal'},
+		contestType: "Cool",
 	},
 };
