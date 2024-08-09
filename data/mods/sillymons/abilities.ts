@@ -164,4 +164,24 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		shortDesc: "Prevents stat lowering on this Pokemon.",
 	},
+	intoxicated: {
+		name: "Intoxicated",
+		onResidualOrder: 26,
+		onResidualSubOrder: 1,
+		onResidual(pokemon) {
+			if (!pokemon.hasType('Poison') && !pokemon.hasType('Steel')) {
+				if (this.randomChance(1, 2)) {
+					pokemon.trySetStatus('psn', pokemon);
+				}
+			}
+			for (const target of this.getAllActive()) {
+				if (!target.hasType('Poison') && !target.hasType('Steel')) {
+					if (this.randomChance(1, 2)) {
+						target.trySetStatus('tox', pokemon);
+					}
+				}
+			}
+		},
+		shortDesc: "Has a 50% chance to poison all Pokemon on the field every turn.",
+	},
 };
