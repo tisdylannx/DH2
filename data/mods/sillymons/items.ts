@@ -66,4 +66,52 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 	},
+	furyorb: {
+		name: "Fury Orb",
+		spritenum: 0,
+		fling: {
+			basePower: 30,
+		},
+		shortDesc: "When the holder's stats are lowered, raises its Attack by 2 stages. Consumed after use.",
+		onBoost(boost, target, source, effect) {
+			let statLowered = false
+			for (let i in boost) {
+				if (boost[i] < 0) {
+					statLowered = true
+					break
+				}
+			}
+			if (statLowered) {
+				this.boost({atk: 2}, target, target, this.dex.items.get('furyorb'))
+				this.add('-activate', target, 'item: Fury Orb')
+				target.takeItem()
+			}
+		},
+		num: -1,
+		gen: 9,
+	},
+	passionorb: {
+		name: "Passion Orb",
+		spritenum: 0,
+		fling: {
+			basePower: 30,
+		},
+		shortDesc: "When the holder's stats are lowered, raises its Special Attack by 2 stages. Consumed after use.",
+		onBoost(boost, target, source, effect) {
+			let statLowered = false
+			for (let i in boost) {
+				if (boost[i] < 0) {
+					statLowered = true
+					break
+				}
+			}
+			if (statLowered) {
+				this.boost({spa: 2}, target, target, this.dex.items.get('passionorb'))
+				this.add('-activate', target, 'item: Passion Orb')
+				target.takeItem()
+			}
+		},
+		num: -2,
+		gen: 9,
+	},
 };
