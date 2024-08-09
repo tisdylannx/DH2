@@ -685,7 +685,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	cloyster: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -1164,7 +1164,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	zapdos: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "DUU",
 		natDexTier: "OU",
 	},
@@ -1671,7 +1671,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	tyranitar: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "DOU",
 		natDexTier: "UU",
 	},
@@ -2102,7 +2102,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	torkoal: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "DOU",
 		natDexTier: "OU",
 	},
@@ -4085,7 +4085,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	hoopaunbound: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
@@ -5486,12 +5486,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "Uber",
 	},
 	irontreads: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	ironmoth: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "DUU",
 		natDexTier: "UU",
 	},
@@ -5613,7 +5613,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	sinistcha: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "DOU",
 		natDexTier: "UU",
 	},
@@ -5633,7 +5633,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	ogerpon: {
-		tier:  "OU",
+		tier:  "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5653,7 +5653,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "UUBL",
 	},
 	archaludon: {
-		tier:  "Uber",
+		tier:  "OU",
 		doublesTier: "DOU",
 		natDexTier: "OU",
 	},
