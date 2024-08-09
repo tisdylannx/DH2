@@ -77,23 +77,56 @@ export const Moves: {[moveid: string]: MoveData} = {
 			volatileStatus: 'burn',
 		},
 	},
-	fly: {
-		num: 19,
+	rebuild: {
+		num: -1,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Fly",
-		pp: 20,
-		priority: -6,
-		flags: {metronome: 1},
-		onTry(source) {
-			return !!this.canSwitch(source.side);
+		name: "Rebuild",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, heal: 1},
+		desc: "The user takes two turns to fully restore its HP.",
+		shortDesc: "Heals the user fully over two turns.",
+		onTry(source, target, move) {
+			if (source.volatiles['twoturnmove']) {
+				delete source.volatiles['twoturnmove']
+				return
+			}
+			this.add('-prepare', source, move.name)
+			source.addVolatile('twoturnmove', target)
+			return null
 		},
-		selfSwitch: true,
+		onPrepareHit(target, source) {
+			this.heal(source.maxhp, source)
+		},
 		secondary: null,
 		target: "self",
-		type: "Flying",
+		type: "Normal",
 		zMove: {effect: 'heal'},
+		contestType: "Clever",
+	},
+	piercingblow: {
+		num: -2,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Piercing Blow",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		desc: "This move's power doubles if the user moves last this turn. This move ignores the target's positive Defense stat stage changes.",
+		shortDesc: "2x power if last; ignores target's Defense boosts.",
+		onModifyMove(move, pokemon, target) {
+			if (!target) return
+			if (target.newlySwitched || this.queue.willMove(target)) return
+			move.basePower *= 2
+		},
+		ignoreDefensive: true,
+		secondary: null,
+		target: "normal",
+		type: "Dark",
 		contestType: "Cool",
 	},
+
 };
