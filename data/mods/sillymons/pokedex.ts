@@ -22,7 +22,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	serperior: {
 		inherit: true,
 		types: ["Grass", "Dragon"],
-		abilities: {0: "Overgrow", H: "Assassin"},
+		abilities: {0: "Overgrow", H: "Contrary"},
 	},
 	samurott: {
 		inherit: true,
@@ -56,5 +56,17 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	ironcrown: {
 		inherit: true,
 		abilities: {0: "Quark Drive", H: "Magic Guard"},
-	}
+	},
+	koffing: {
+		inherit: true,
+		abilities: {0: "Levitate", 1: "Neutralizing Gas", H: "Intoxicated"},
+	},
+	weezing: {
+		inherit: true,
+		abilities: {0: "Levitate", 1: "Neutralizing Gas", H: "Intoxicated"},
+	},
+	weezinggalar: {
+		inherit: true,
+		abilities: {0: "Levitate", 1: "Neutralizing Gas", H: "Intoxicated"},
+	},
 };
