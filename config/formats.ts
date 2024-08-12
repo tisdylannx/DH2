@@ -86,12 +86,4 @@ export const Formats: FormatList = [
 		ruleset: ['[Gen 9] SillyMons NU'],
 		banlist: ['PUBL', 'NU'],
 	},
-	{
-		name: "[Gen 9] National Dex TWOP OU",
-		desc: "A metagame from a region generated from theworldofpokemon's region generator option.",
-		mod: 'gentwop',
-		teambuilderFormat: "National Dex",
-		ruleset: ['Standard National Dex', 'Sleep Moves Clause'],
-		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Sand Veil', 'Shadow Tag', 'Snow Cloak', 'King\'s Rock', 'Baton Pass'],
-	},
 ];
