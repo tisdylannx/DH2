@@ -20,6 +20,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Learnsets", "pawniard").learnset.piercingblow = ["9L1"];
 		this.modData("Learnsets", "bisharp").learnset.piercingblow = ["9L1"];
 		this.modData("Learnsets", "kingambit").learnset.piercingblow = ["9L1"];
-
+		this.modData("Learnsets", "vespiquen").learnset.quiverdance = ["9L1"];
 	},
 };

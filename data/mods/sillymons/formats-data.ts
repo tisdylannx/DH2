@@ -1720,7 +1720,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "NFE",
 	},
 	blaziken: {
-		tier:  "UU",
+		tier:  "UUBL",
 		doublesTier: "DUU",
 		natDexTier: "UUBL",
 	},
@@ -3945,7 +3945,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	hawlucha: {
-		tier:  "UU",
+		tier:  "UUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
@@ -5567,7 +5567,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	armarouge: {
-		tier:  "UU",
+		tier:  "UUBL",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},

@@ -184,4 +184,61 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		shortDesc: "Has a 50% chance to poison all Pokemon on the field every turn.",
 	},
+	queenbee: {
+		name: "Queen Bee",
+		shortDesc: "For the first time it gets hit, a Combee takes damage instead of Vespiquen.",
+		onDamagePriority: 1,
+		onDamage(damage, target, source, effect) {
+			if (target.species.name !== 'Vespiquen') return
+			if (!target.volatiles['queenbee']) {
+				target.addVolatile('queenbee')
+			}
+			if (target.volatiles['queenbee'].protectionsLeft > 0) {
+				this.add('-ability', target, 'Queen Bee')
+				this.add('-message', `A Combee protected ${target.name}!`)
+				target.volatiles['queenbee'].protectionsLeft--
+				
+				// Calculate damage based on Combee's base stats
+				const combeeStats = this.dex.species.get('Combee').baseStats
+				const level = target.level
+				const defenseStat = effect.category === 'Physical' ? 'def' : 'spd'
+				const defense = Math.floor((2 * combeeStats[defenseStat] + 31 + 85 / 4) * level / 100 + 5)
+				const damageAmount = Math.floor(Math.floor(Math.floor(2 * level / 5 + 2) * effect.basePower * damage / defense) / 50 + 2)
+				
+				const damagePercentage = Math.round((damageAmount / combeeStats.hp) * 100)
+				this.add('-message', `Combee lost ${damagePercentage}% of its health!`)
+				return 0
+			}
+		},
+		onStart(pokemon) {
+			pokemon.addVolatile('queenbee')
+		},
+		onSwitchIn(pokemon) {
+			pokemon.addVolatile('queenbee')
+		},
+		condition: {
+			onStart(pokemon) {
+				this.effectState.protectionsLeft = 1
+			},
+		},
+	},
+	possess: {
+		name: "Possess",
+		shortDesc: "Upon defeating a foe, transforms into that foe, copying its moves.",
+		onSourceFaint(target, source, effect) {
+			if (!source || source.transformed) return
+			source.transformInto(target, this.dex.abilities.get('possess'))
+			this.add('-ability', source, 'Possess')
+			this.add('-transform', source, target.species)
+		},
+	},
+	bellchime: {
+		name: "Bell Chime",
+		shortDesc: "At the end of every turn, this Pokémon uses Heal Bell.",
+		onResidualOrder: 26,
+		onResidualSubOrder: 1,
+		onResidual(pokemon) {
+			this.actions.useMove('healbell', pokemon)
+		},
+	},
 };

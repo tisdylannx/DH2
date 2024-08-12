@@ -109,7 +109,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	piercingblow: {
 		num: -2,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 75,
 		category: "Physical",
 		name: "Piercing Blow",
 		pp: 10,

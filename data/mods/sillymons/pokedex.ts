@@ -69,4 +69,36 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Levitate", 1: "Neutralizing Gas", H: "Intoxicated"},
 	},
+	vespiquen: {
+		inherit: true,
+		abilities: {0: "Queen Bee", H: "Unnerve"},
+	},
+	magcargo: {
+		inherit: true,
+		abilities: {0: "Magma Armor", 1: "Flame Body", H: "Shell Shield"},
+	},
+	squirtle: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Rain Dish", H: "Shell Shield"},
+	},
+	wartortle: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Rain Dish", H: "Shell Shield"},
+	},
+	blastoise: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Rain Dish", H: "Shell Shield"},
+	},
+	bronzong: {
+		inherit: true,
+		abilities: {0: "Heatproof", 1: "Bell Chime", H: "Levitate"},
+	},
+	chandelure: {
+		inherit: true,
+		abilities: {0: "Flash Fire", 1: "Possess", H: "Levitate"},
+	},
+	sinistcha: {
+		inherit: true,
+		abilities: {0: "Hospitality", 1: "Magic Bounce", H: "Possess"},
+	},
 };
