@@ -13,13 +13,18 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Learnsets", "regidrago").learnset.rebuild = ["9L1"];
 		delete this.modData("Learnsets", "archaludon").learnset.electroshot;
 		this.modData("Learnsets", "ragingbolt").learnset.electroshot = ["9L1"];
-		this.modData("Learnsets", "koffing").learnset.block = ["9L1"];
-		this.modData("Learnsets", "weezing").learnset.block = ["9L1"];
-		this.modData("Learnsets", "weezinggalar").learnset.block = ["9L1"];
-		this.modData("Learnsets", "weezinggalar").learnset.wish = ["9L1"];
-		this.modData("Learnsets", "pawniard").learnset.piercingblow = ["9L1"];
-		this.modData("Learnsets", "bisharp").learnset.piercingblow = ["9L1"];
-		this.modData("Learnsets", "kingambit").learnset.piercingblow = ["9L1"];
-		this.modData("Learnsets", "vespiquen").learnset.quiverdance = ["9L1"];
+		this.modData("Learnsets", "garchomp").learnset.dragondance = ["9L1"];
+		this.modData("Learnsets", "golduck").learnset.tailglow = ["9L1"];
+		this.modData("Learnsets", "golduck").learnset.agility = ["9L1"];
+		this.modData("Learnsets", "ambipom").learnset.machpunch = ["9L1"];
+		this.modData("Learnsets", "ambipom").learnset.bulletpunch = ["9L1"];
+		this.modData("Learnsets", "ambipom").learnset.swordsdance = ["9L1"];
+		this.modData("Learnsets", "charizard").learnset.blazingwing = ["9L1"];
+		this.modData("Learnsets", "gogoat").learnset.grassyglide = ["9L1"];
+		this.modData("Learnsets", "snorlax").learnset.slackoff = ["9L1"];
+		this.modData("Learnsets", "spiritomb").learnset.recover = ["9L1"];
+		this.modData("Learnsets", "indeedeef").learnset.memento = ["9L1"];
+		this.modData("Learnsets", "indeedee").learnset.memento = ["9L1"];
+		this.modData("Learnsets", "cryogonal").learnset.flipturn = ["9L1"];
 	},
 };
