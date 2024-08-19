@@ -128,5 +128,54 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 		contestType: "Cool",
 	},
-
+	blazingwing: {
+		num: -3,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Blazing Wing",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		desc: "This move combines Fire in its type effectiveness against the target. If the target would take more damage from Flying-type moves, this move becomes Flying-type. Otherwise, it remains Fire-type.",
+		shortDesc: "Combines Fire in type effectiveness; becomes Flying if more effective.",
+		onModifyType(move, pokemon, target) {
+			const fireEffectiveness = this.dex.getEffectiveness('Fire', target.types);
+			const flyingEffectiveness = this.dex.getEffectiveness('Flying', target.types);
+			if (flyingEffectiveness > fireEffectiveness) {
+				move.type = 'Flying';
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fire",
+		contestType: "Beautiful",
+	},
+	triplearrows: {
+		num: -4,
+		accuracy: 100,
+		basePower: 40,
+		category: "Physical",
+		name: "Triple Arrows",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		critRatio: 2,
+		multihit: 3,
+		desc: "Hits three times. Each hit has a 10% chance to make the target flinch and a higher chance for a critical hit.",
+		shortDesc: "Hits 3 times. Each hit: 10% flinch, high crit.",
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Cool",
+	},
+	hyperdrill: {
+		inherit: true,
+		willCrit: true,
+		desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit. Bypasses protection.",
+	},
 };
