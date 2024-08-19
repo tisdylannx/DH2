@@ -120,76 +120,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: -2,
 		gen: 9,
 	},
-	assaultvest: {
-		name: "Assault Vest",
-		spritenum: 581,
-		fling: {
-			basePower: 80,
-		},
-		onModifySpDPriority: 1,
-		onModifySpD(spd) {
-			return this.chainModify(1.3)
-		},
-		onModifyDefPriority: 1,
-		onModifyDef(def) {
-			return this.chainModify(1.3)
-		},
-		itemUser: ["Pokémon"],
-		num: 640,
-		gen: 6,
-		desc: "Holder's Sp. Def and Def are 1.3x, but it can't use status moves.",
-	},
-	expertbelt: {
-		name: "Expert Belt",
-		spritenum: 132,
-		fling: {
-			basePower: 10,
-		},
-		onModifyDamage(damage, source, target, move) {
-			if (move && target.getMoveHitData(move).typeMod > 0) {
-				return this.chainModify(1.5)
-			}
-		},
-		num: 268,
-		gen: 4,
-		desc: "Holder's super-effective moves do 1.5x damage.",
-	},
-	abilityshield: {
-		name: "Ability Shield",
-		spritenum: 753,
-		fling: {
-			basePower: 30,
-		},
-		onSetAbility(ability, target, source, effect) {
-			return false
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target !== source) {
-				let showMsg = false
-				for (let i in boost) {
-					if (boost[i] < 0) {
-						delete boost[i]
-						showMsg = true
-					}
-				}
-				if (showMsg && !(effect as ActiveMove).secondaries) {
-					this.add('-fail', target, 'unboost', '[from] item: Ability Shield')
-				}
-			}
-		},
-		onStart(pokemon) {
-			this.add('-item', pokemon, 'Ability Shield')
-			this.add('-message', `${pokemon.name}'s Ability Shield is ignoring all abilities on the field!`)
-		},
-		onAnyTryPrimaryHit(target, source, move) {
-			if (target !== source) {
-				move.ignoreAbility = true
-			}
-		},
-		num: 1881,
-		gen: 9,
-		desc: "Holder's Ability cannot be changed by any effect. Protects the holder from all abilities on the field.",
-	},
 	absorbbulb: {
 		name: "Absorb Bulb",
 		spritenum: 2,
@@ -222,17 +152,38 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 30,
 		},
-		onModifyTypePriority: -1,
-		onModifyType(move, pokemon, target) {
-			if (move.type === 'Ice') {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Ice') {
 				move.type = 'Water'
-				this.add('-activate', pokemon, 'item: Melting Core')
+				this.add('-activate', target, 'item: Melting Core')
 				this.add('-message', `${move.name} was changed to Water type!`)
 			}
 		},
 		num: 1882,
 		gen: 9,
-		desc: "Turns Ice-type moves used on the holder into Water-type moves.",
+		desc: "Turns Ice-type moves used against the holder into Water-type moves.",
 	},
-
+	bigroot: {
+		name: "Big Root",
+		spritenum: 29,
+		fling: {
+			basePower: 10,
+		},
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			const heals = ['drain', 'leechseed', 'ingrain', 'aquaring', 'strengthsap']
+			if (heals.includes(effect.id)) {
+				return this.chainModify([5324, 4096])
+			}
+		},
+		onModifyDamage(damage, source, target, move) {
+			if (move.drain) {
+				this.debug('Big Root boost')
+				return this.chainModify(1.3)
+			} 
+		},
+		num: 296,
+		gen: 4,
+		desc: "Holder's draining moves deal 1.3x damage. Draining effects are 30% stronger.",
+	},
 };
