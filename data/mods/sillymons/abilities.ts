@@ -241,4 +241,109 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.actions.useMove('healbell', pokemon)
 		},
 	},
+	excessload: {
+		name: "Excess Load",
+		shortDesc: "When this Pokémon faints, it lowers all Pokémon's Speed by 1 stage.",
+		onFaint(pokemon) {
+			for (const target of this.getAllActive()) {
+				this.boost({spe: -1}, target, pokemon, null, true)
+			}
+			this.add('-ability', pokemon, 'Excess Load')
+			this.add('-message', `${pokemon.name}'s Excess Load lowered everyone's Speed!`)
+		},
+	},
+	perfectpedals: {
+		name: "Perfect Pedals",
+		shortDesc: "This Pokémon cannot be poisoned. Poison-type moves have no effect on this Pokémon.",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'psn' || pokemon.status === 'tox') {
+				this.add('-activate', pokemon, 'ability: Perfect Pedals')
+				pokemon.cureStatus()
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'psn' && status.id !== 'tox') return
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Perfect Pedals')
+			}
+			return false
+		},
+		onTryHit(target, source, move) {
+			if (move.type === 'Poison') {
+				this.add('-immune', target, '[from] ability: Perfect Pedals')
+				return null
+			}
+		},
+	},
+	graffiti: {
+		name: "Graffiti",
+		shortDesc: "This Pokémon's Normal-type moves become Poison-type and have a 30% chance to poison.",
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Poison';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (move.graffitiBoosted) {
+				if (!move.secondaries) move.secondaries = []
+				move.secondaries.push({
+					chance: 30,
+					status: 'psn',
+					ability: this.dex.abilities.get('graffiti'),
+				})
+			}
+		},
+	},
+	melodyshift: {
+		name: "Melody Shift",
+		shortDesc: "Meloetta changes forme when using Physical or Special moves.",
+		onBeforeMove(pokemon, target, move) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Meloetta') return
+			if (move.category === 'Physical' && pokemon.species.forme !== 'Pirouette') {
+				pokemon.formeChange('Meloetta-Pirouette', this.effect, false, '[msg]')
+			} else if (move.category === 'Special' && pokemon.species.forme !== 'Aria') {
+				pokemon.formeChange('Meloetta-Aria', this.effect, false, '[msg]')
+			}
+		},
+	},
+	shadowcloak: {
+        onTryHitPriority: 1,
+        onTryHit(target, source, move) {
+            if (move.priority > 0) {
+                this.add('-immune', target, '[from] ability: Shadow Cloak');
+                return null;
+            }
+        },
+        name: "Shadow Cloak",
+        shortDesc: "This Pokemon is immune to priority moves.",
+    },
+	frostforce: {
+		name: "Frost Force",
+		desc: "This Pokemon's Normal-type moves become Ice-type moves and have 1.2x power. Summons Snow when switched in.",
+		shortDesc: "Normal-type moves become Ice with 1.2x power. Summons Snow.",
+		onStart(source) {
+			this.field.setWeather('snow')
+		},
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			]
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Ice'
+				move.frostforceBoosted = true
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.frostforceBoosted) return this.chainModify([4915, 4096])
+		},
+	},
 };
