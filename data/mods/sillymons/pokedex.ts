@@ -15,6 +15,10 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Solid Support", 1: "Ice Body", H: "Sturdy"},
 	},
+	avalugghisui: {
+		inherit: true,
+		abilities: {0: "Solid Support", 1: "Rocky Payload", H: "Sturdy"},
+	},
 	ceruledge: {
 		inherit: true,
 		abilities: {0: "Flash Fire", H: "Sharpness"},
@@ -101,4 +105,96 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		abilities: {0: "Hospitality", 1: "Magic Bounce", H: "Possess"},
 	},
+	spidops: {
+		inherit: true,
+		abilities: {0: "Insomnia", 1: "Excess Load", H: "Stakeout"},
+	},
+	meganium: {
+		inherit: true,
+		types: ["Grass", "Dragon"],
+	},
+	quilava: {
+		inherit: true,
+		types: ["Fire", "Ground"],
+	},
+	typhlosion: {
+		inherit: true,
+		types: ["Fire", "Ground"],
+	},
+	feraligatr: {
+		inherit: true,
+		types: ["Water", "Dark"],
+	},
+	dipplin: {
+		inherit: true,
+		abilities: {0: "Well-Baked Body", 1: "Regenerator", H: "Sticky Hold"},
+	},
+	golduck: {
+		inherit: true,
+		types: ["Water", "Psychic"],
+		abilities: {0: "Damp", 1: "Cloud Nine", H: "Swift Swim"},
+	},
+	bastiodon: {
+		inherit: true,
+		types: ["Steel"],
+		abilities: {0: "Filter", 1: "Soundproof"},
+	},
+    bellibolt: {
+		inherit: true,
+		types: ["Electric", "Water"],
+		abilities: {0: "Earth Eater", 1: "Thick Fat", H: "Liquidize"},
+	},
+	electrodehisui: {
+		inherit: true,
+		abilities: {0: "Soundproof", 1: "Static", H: "Magic Guard"},
+	},
+	gogoat: {
+		inherit: true,
+		abilities: {0: "Sap Sipper", H: "Grassy Surge"},
+	},
+	florges: {
+		inherit: true,
+		abilities: {0: "Perfect Pedals", H: "Symbiosis"},
+	},
+	grafaiai: {
+		inherit: true,
+		abilities: {0: "Unburden", 1: "Graffiti", H: "Prankster"},
+	},
+	luvdisc: {
+		inherit: true,
+		types: ["Water", "Fairy"],
+		abilities: {0: "Water Absorb", 1: "Hydration", H: "Primordial Sea"},
+	},  
+	spiritomb: {
+		inherit: true,
+		abilities: {0: "Pressure", H: "Dark Aura"},
+	},
+	swampert: {
+		inherit: true,
+		abilities: {0: "Torrent", H: "Regenerator"},
+	},
+	whiscash: {
+		inherit: true,
+		abilities: {0: "Oblivious", 1: "Regenerator", H: "Hydration"},
+	},
+	meloetta: {
+		inherit: true,
+		abilities: {0: "Melody Shift"},
+	},
+	grimmsnarl: {
+		inherit: true,
+		abilities: {0: "Shadow Cloak", 1: "Prankster", H: "Pickpocket"},
+	},
+	crawdaunt: {
+		inherit: true,
+		abilities: {0: "Adaptability", 1: "Moxie", H: "Swift Swim"},
+	},
+	cryogonal: {
+		inherit: true,
+		abilities: {0: "Levitate", H: "Frost Force"},
+	},
+	orthworm: {
+		inherit: true,
+		abilities: {0: "Earth Eater", 1: "Regenerator", H: "Solid Support"},
+	}
 };
