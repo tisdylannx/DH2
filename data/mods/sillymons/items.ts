@@ -186,4 +186,126 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 4,
 		desc: "Holder's draining moves deal 1.3x damage. Draining effects are 30% stronger.",
 	},
+	muscleband: {
+		name: "Muscle Band",
+		spritenum: 297,
+		fling: {
+			basePower: 10,
+		},
+		onBasePowerPriority: 16,
+		onBasePower(basePower, user, target, move) {
+			if (move.category === 'Physical') {
+				return this.chainModify(1.2)
+			}
+		},
+		num: 266,
+		gen: 4,
+		desc: "Holder's physical attacks have 1.2x power.",
+	},
+	wiseglasses: {
+		name: "Wise Glasses",
+		spritenum: 539,
+		fling: {
+			basePower: 10,
+		},
+		onBasePowerPriority: 16,
+		onBasePower(basePower, user, target, move) {
+			if (move.category === 'Special') {
+				return this.chainModify(1.2)
+			}
+		},
+		num: 267,
+		gen: 4,
+		desc: "Holder's special attacks have 1.2x power.",
+	},
+	megaphone: {
+		name: "Megaphone",
+		spritenum: 0, 
+		fling: {
+			basePower: 10,
+		},
+		onBasePowerPriority: 16,
+		onBasePower(basePower, user, target, move) {
+			if (move.flags['sound']) {
+				return this.chainModify(1.3);
+			}
+		},
+		num: -3,
+		gen: 9,
+		desc: "Holder's sound-based moves have 1.3x power.",
+	},
+	crystalglasses: {
+		name: "Crystal Glasses",
+		spritenum: 0,
+		fling: {
+			basePower: 10,
+		},
+		onModifyMove(move, pokemon) {
+			if (move.category === 'Special') {
+				move.ignoreDefensive = true;
+			}
+		},
+		num: -4,
+		gen: 9,
+		desc: "Holder's special attacks ignore stat changes.",
+	},
+	reinforcedarmor: {
+		name: "Reinforced Armor",
+		spritenum: 0,
+		fling: {
+			basePower: 10,
+		},
+		onModifyDamage(damage, source, target, move) {
+			if (move.flags['contact']) {
+				return this.chainModify(0.7);
+			}
+		},
+		onModifySpe(spe) {
+			return this.chainModify(0.5);
+		},
+		num: -5,
+		gen: 9,
+		desc: "Reduces damage from contact moves by 30%. Halves holder's Speed.",
+	},
+	mysteriouscloak: {
+		name: "Mysterious Cloak",
+		spritenum: 0,
+		fling: {
+			basePower: 10,
+		},
+		onAfterSetStatus(status, target, source, effect) {
+			if (source && source !== target) {
+				source.trySetStatus(status, target);
+			}
+		},
+		num: -6,
+		gen: 9,
+		desc: "Bounces back secondary effects of moves to the user.",
+	},
+	fusebox: {
+		name: "Fuse Box",
+		spritenum: 0,
+		fling: {
+			basePower: 10,
+		},
+		onStart(pokemon) {
+			pokemon.volatiles['fusebox'] = {counter: 3};
+			this.add('-message', `${pokemon.name}'s Fuse Box: 3 turns left.`);
+		},
+		onResidual(pokemon) {
+			if (pokemon.volatiles['fusebox']) {
+				pokemon.volatiles['fusebox'].counter--;
+				if (pokemon.volatiles['fusebox'].counter === 0) {
+					this.add('-activate', pokemon, 'item: Fuse Box');
+					this.add('-message', `${pokemon.name}'s Fuse Box exploded!`);
+					pokemon.faint();
+				} else {
+					this.add('-message', `${pokemon.name}'s Fuse Box: ${pokemon.volatiles['fusebox'].counter} turns left.`);
+				}
+			}
+		},
+		num: -7,
+		gen: 9,
+		desc: "Explodes after 3 turns, fainting the holder.",
+	},
 };
