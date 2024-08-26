@@ -346,4 +346,113 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (move.frostforceBoosted) return this.chainModify([4915, 4096])
 		},
 	},
+	spongeup: {
+		name: "Sponge Up",
+		shortDesc: "When switching out, deals 50% of all damage taken while on the field.",
+		onStart(pokemon) {
+			pokemon.damageTaken = 0
+		},
+		onDamagingHit(damage, target, source, move) {
+			target.damageTaken += damage
+		},
+		onSwitchOut(pokemon) {
+			const damage = Math.floor(pokemon.damageTaken * 0.5)
+			if (damage > 0) {
+				this.damage(damage, pokemon.side.foe.active[0], pokemon)
+				this.add('-ability', pokemon, 'Sponge Up')
+			}
+			pokemon.damageTaken = 0
+		},
+	},
+	monkeydo: {
+		name: "Monkey Do",
+		desc: "This Pokemon uses the same move that hit it after its turn ends.",
+		shortDesc: "Uses the same move that hit it after its turn ends.",
+		onAfterMoveSecondary(target, source, move) {
+			if (!target.hasAbility('monkeydo')) return
+			if (source !== target && source.lastMove && !source.lastMove.isZ && !source.lastMove.isMax) {
+				this.actions.useMove(source.lastMove.id, target)
+			}
+		},
+	},
+	hardbody: {
+ 		name: "Hard Body",
+ 		desc: "This Pokemon cannot be flinched and takes reduced damage from contact moves.",
+ 		shortDesc: "Cannot be flinched. Takes 20% less damage from contact moves.",
+ 		onFlinch: false,
+ 		onSourceModifyDamage(damage, source, target, move) {
+ 			if (move.flags['contact']) {
+ 				return this.chainModify(0.8);
+ 			}
+ 		},
+ 	},
+ 	echochamber: {
+ 		name: "Echo Chamber",
+ 		desc: "This Pokemon's sound-based moves have 1.3x power and bypass Substitute.",
+ 		shortDesc: "Sound moves: 1.3x power and bypass Substitute.",
+ 		onBasePowerPriority: 8,
+ 		onBasePower(basePower, attacker, defender, move) {
+ 			if (move.flags['sound']) {
+ 				return this.chainModify(1.3);
+ 			}
+ 		},
+ 		onModifyMove(move) {
+ 			if (move.flags['sound']) {
+ 				move.infiltrates = true;
+ 			}
+ 		},
+ 	},
+	firststrike: {
+ 		name: "First Strike",
+ 		desc: "This Pokemon's moves deal 1.5x damage on its first turn out.",
+ 		shortDesc: "First turn out: moves deal 1.5x damage.",
+ 		onStart(pokemon) {
+ 			pokemon.addVolatile('firststrike');
+ 		},
+ 		onEnd(pokemon) {
+ 			delete pokemon.volatiles['firststrike'];
+ 		},
+ 		effect: {
+ 			duration: 1,
+ 			onBasePowerPriority: 8,
+ 			onBasePower(basePower, attacker, defender, move) {
+ 				return this.chainModify(1.5);
+ 			},
+ 		},
+ 	},
+ 	strongwilled: {
+ 		name: "Strong-Willed",
+ 		desc: "Moves do not have a recharge turn.",
+ 		shortDesc: "Moves do not have a recharge turn.",
+ 		onModifyMove(move) {
+ 			if (move.self?.volatileStatus === 'mustrecharge') {
+ 				delete move.self.volatileStatus;
+ 			}
+ 		},
+ 	},
+	tripleheaded: {
+ 		name: "Triple Headed",
+ 		desc: "This Pokemon's moves have 60% less power but hit three times. Does not affect moves used on itself.",
+ 		shortDesc: "Moves: 60% less power, hit 3 times. Not self-moves.",
+ 		onBasePowerPriority: 8,
+ 		onBasePower(basePower) {
+ 			return this.chainModify(0.4);
+ 		},
+ 		onModifyMove(move, pokemon, target) {
+ 			if (move.multihit) {
+ 				delete move.multihit;
+ 			}
+ 			if (target && target !== pokemon) {
+ 				move.multihit = 3;
+ 			}
+ 		},
+ 	},
+	timewarp: {
+ 		name: "Time Warp",
+ 		desc: "This Pokemon sets up Trick Room when it switches out.",
+ 		shortDesc: "Sets up Trick Room when switching out.",
+ 		onSwitchOut(pokemon) {
+ 			pokemon.side.addSideCondition('trickroom');
+ 		},
+ 	},
 };
