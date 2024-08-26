@@ -142,7 +142,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
     bellibolt: {
 		inherit: true,
 		types: ["Electric", "Water"],
-		abilities: {0: "Earth Eater", 1: "Thick Fat", H: "Liquidize"},
+		abilities: {0: "Earth Eater", 1: "Thick Fat", H: "Regenerator"},
 	},
 	electrodehisui: {
 		inherit: true,
@@ -196,5 +196,77 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	orthworm: {
 		inherit: true,
 		abilities: {0: "Earth Eater", 1: "Regenerator", H: "Solid Support"},
-	}
+	},
+	amoonguss: {
+		inherit: true,
+		abilities: {0: "Unaware", H: "Regenerator"},
+	},
+	aipom: {
+		inherit: true,
+		abilities: {0: "Technician", 1: "Monkey Do", H: "Skill Link"},
+	},
+	ambipom: {
+		inherit: true,
+		abilities: {0: "Technician", 1: "Monkey Do", H: "Skill Link"},
+	},
+	kommoo: {
+		inherit: true,
+		abilities: {0: "Bulletproof", 1: "Soundproof", H: "Echo Chamber"},
+	},
+	duraludon: {
+		inherit: true,
+		abilities: {0: "Light Metal", 1: "Heavy Metal", H: "Hard Body"},
+	},
+	nacli: {
+		inherit: true,
+		abilities: {0: "Purifying Salt", 1: "Sturdy", H: "Hard Body"},
+	},
+	naclstack: {
+		inherit: true,
+		abilities: {0: "Purifying Salt", 1: "Sturdy", H: "Hard Body"},
+	},
+	garganacl: {
+		inherit: true,
+		abilities: {0: "Purifying Salt", 1: "Sturdy", H: "Hard Body"},
+	},
+	dodrio: {
+ 		inherit: true,
+ 		abilities: {0: "Run Away", 1: "Early Bird", H: "Triple Headed"},
+ 	},
+ 	tauros: {
+ 		inherit: true,
+ 		abilities: {0: "Sheer Force", 1: "Strong-Willed", H: "Hard Body"},
+ 	},
+	passimian: {
+		inherit: true,
+		abilities: {0: "First Strike", 1: "Reckless", H: "Speed Boost"},
+	},
+	elekid: {
+ 		inherit: true,
+ 		abilities: {0: "Static", 1: "Vital Spirit", H: "Electric Surge"},
+ 	},
+ 	electabuzz: {
+ 		inherit: true,
+ 		abilities: {0: "Static", 1: "Vital Spirit", H: "Electric Surge"},
+ 	},
+ 	electivire: {
+ 		inherit: true,
+ 		abilities: {0: "Motor Drive", 1: "Vital Spirit", H: "Electric Surge"},
+ 	},
+ 	magby: {
+ 		inherit: true,
+ 		abilities: {0: "Flame Body", 1: "Vital Spirit", H: "Drought"},
+ 	},
+ 	magmar: {
+ 		inherit: true,
+ 		abilities: {0: "Flame Body", 1: "Vital Spirit", H: "Drought"},
+ 	},
+ 	magmortar: {
+ 		inherit: true,
+ 		abilities: {0: "Flame Body", 1: "Vital Spirit", H: "Drought"},
+ 	},
+	cresselia: {
+ 		inherit: true,
+ 		abilities: {0: "Time Warp", 1: "Levitate", H: "Magic Bounce"},
+ 	}
 };
