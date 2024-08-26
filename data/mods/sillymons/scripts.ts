@@ -26,5 +26,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Learnsets", "indeedeef").learnset.memento = ["9L1"];
 		this.modData("Learnsets", "indeedee").learnset.memento = ["9L1"];
 		this.modData("Learnsets", "cryogonal").learnset.flipturn = ["9L1"];
+		this.modData("Learnsets", "aipom").learnset.swordsdance = ["9L1"];
+		this.modData("Learnsets", "ambipom").learnset.swordsdance = ["9L1"];
+		this.modData("Learnsets", "bastiodon").learnset.wish = ["9L1"];
+  		this.modData("Learnsets", "bastiodon").learnset.amnesia = ["9L1"];
 	},
 };
