@@ -27,6 +27,16 @@ export const Formats: FormatList = [
 		// name: "serverspecials",
 	},
 	{
+		name: "[Gen 9] Cookie Run OU",
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
+		],
+		teambuilderFormat: "OU",
+		mod: 'cookiemon',
+		ruleset: ['Standard'],
+		banlist: ['Uber'],
+	},
+	{
 		name: "[Gen 3] Bonus OU",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/post-10062853">Dex Reversal</a>`,
